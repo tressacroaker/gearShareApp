@@ -1,10 +1,17 @@
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const express = require('express');
+const session = require('express-session');
 const mongoose = require('mongoose');
+const passport = require('passport');
 
 var app = express();
 
+require('./config/passport.js')(passport);
+
+app.use(session(config));
+app.use(passport.intialize());
+app.use(passport.session());
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
