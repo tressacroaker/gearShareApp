@@ -1,0 +1,26 @@
+{
+  "name": "projpractice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulpfile.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tressacroaker/gearShareApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tressacroaker/gearShareApp/issues"
+  },
+  "homepage": "https://github.com/tressacroaker/gearShareApp#readme",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1"
+  }
+}
