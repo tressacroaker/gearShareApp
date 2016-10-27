@@ -1,5 +1,5 @@
-const itemsModel = require('./../models/itemsModel.js');
+var itemsModel = require('./../models/itemsModel.js');
 
 module.exports {
-  
+
 };

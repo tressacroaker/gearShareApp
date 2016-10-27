@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="gearApp">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Gear Share</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <style>
+        body        { padding-top:80px; }
+    </style>
   </head>
-  <body>
+  <body ng-controller="mainCtrl">
+    <ui-view></ui-view>
+    <div class="container">
+
+    <div class="jumbotron text-center">
+        <h1><span class="fa fa-lock"></span> Login Below</h1>
+
+        <p>Login or Register with:</p>
+
+        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Login Here</a>
+        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Create Account</a>
+    </div>
+
+</div>
     this is a test
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+    <script src="./../public/app.js"></script>
+    <script src="./../public/mainCtrl.js"></script>
+    <script src="./../public/mainServ.js"></script>
+    <script src="./../public/styles.css"></script>
   </body>
 </html>
