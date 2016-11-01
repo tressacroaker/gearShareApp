@@ -1,7 +1,31 @@
 <div class='loginContainer'>
-  <div class="loginForm">
+  <div class="form">
+    <form class="createForm" ng-submit="postNewUser(user)">
+      <h3> Create New Account Below:</h3>
+      <h4>First Name:</h4>
+      <input type="text" class="firstName" ng-model="user.firstName" placeholder="First Name">
+      <br>
+      <h4>Last Name:</h4>
+      <input type="text" class="lastName" ng-model="user.lastName" placeholder="Last Name">
+      <br>
+      <h4>Email:</h4>
+      <input type="text" class="email" ng-model="user.email" placeholder="Email">
+      <br>
+      <h4>Password:</h4>
+      <input type="text" class="password" ng-model="user.password" placeholder="Password">
+      <br>
+      <input type="submit">
+    </form>
 
-
+    <form class="loginForm" ng-submit="postNewUser(user)">
+      <h3> Login Below:</h3>
+      <h4>Email:</h4>
+      <input type="text" class="email" ng-model="user.email" placeholder="Email">
+      <br>Password: </h4>
+      <input type="text" class="password" ng-model="user.password" placeholder="Password">
+      <br>
+      <input type="submit">
+    </form>
 
   </div>
 </div>

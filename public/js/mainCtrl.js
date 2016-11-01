@@ -17,4 +17,12 @@ $scope.postNewItem = function(item){
   })
 };
 
+$scope.postNewUser = function(user){
+  console.log(user);
+  mainServ.postNewUser(user)
+  .then(function(response){
+    console.log(response);
+  })
+};
+
 });
