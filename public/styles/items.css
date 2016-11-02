@@ -1,0 +1,53 @@
+@import url(https://fonts.googleapis.com/css?family=Bitter);
+// center
+body {
+  align-items: center;
+  /*// background: #BB8AB8;*/
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.listed-item {
+  align-items: center;
+  background: white;
+  border: 1px solid lightgrey;
+  display: flex;
+  height: 200px;
+  justify-content: space-around;
+  padding: 10px;
+  margin: 10px;
+  width: 40%;
+
+  .pic {
+   align-items: center;
+  /*// border: 1px solid lightgrey;*/
+  display: flex;
+  height: 200px;
+  /*// justify-content: space-between;*/
+  /*// padding: 10px;*/
+  margin: 10px;
+  width: 50%;
+  }
+
+  .fa {
+    color: #FFBD2B;
+    font-size: 24px;
+    flex-basis: 45px;
+  }
+
+  p {
+    font-family: 'Bitter', serif;
+    font-size: 21px;
+  }
+
+  .listed-item_title {
+    color: #5F5F5F;
+  }
+
+  .listed-item_price {
+    color: #54CACD;
+    font-weight: bold;
+    margin-left: auto;
+  }
+}
