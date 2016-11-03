@@ -1,18 +1,19 @@
 <div class='loginContainer'>
+  <!-- <button type="button" ng-click="logout()">Logout</button> -->
   <div class="form">
-    <form class="createForm" ng-submit="postNewUser(user)">
+    <form class="createForm" ng-submit="postNewUser(newUser)">
       <h3> Create New Account Below:</h3>
       <h4>First Name:</h4>
-      <input type="text" class="firstName" ng-model="user.firstName" placeholder="First Name">
+      <input type="text" class="firstName" ng-model="newUser.firstName" placeholder="First Name">
       <br>
       <h4>Last Name:</h4>
-      <input type="text" class="lastName" ng-model="user.lastName" placeholder="Last Name">
+      <input type="text" class="lastName" ng-model="newUser.lastName" placeholder="Last Name">
       <br>
       <h4>Email:</h4>
-      <input type="text" class="email" ng-model="user.email" placeholder="Email">
+      <input type="text" class="email" ng-model="newUser.email" placeholder="Email">
       <br>
       <h4>Password:</h4>
-      <input type="text" class="password" ng-model="user.password" placeholder="Password">
+      <input type="text" class="password" ng-model="newUser.password" placeholder="Password">
       <br>
       <input type="submit">
     </form>
@@ -29,3 +30,57 @@
 
   </div>
 </div>
+
+
+
+<!-- <h1>Login</h1>
+
+<form action="destination.php">
+		<div>
+				<p>Login :</p>
+				<p>
+						<label for="email">Email : </label>
+						<input type="email" id="email" autofocus>
+				</p>
+				<p>
+						<label for="password">Password : </label>
+						<input type="password" id="password">
+				</p>
+				<p><small>If you do not have an account please follow the steps below to join the Gear Share Community.</small></p>
+				<p>
+						<input type="submit" value="Continue">
+				</p>
+
+		</div>
+
+	<form action="destination.php">
+		<div>
+				<p>Create Account :</p>
+				<p>
+						<label for="firstName">First Name : </label>
+						<input type="firstName" id="firstName" autofocus>
+				</p>
+				<p>
+						<label for="lastName">Last Name : </label>
+						<input type="lastName" id="lastName">
+				</p>
+				<p>
+						<label for="email">E-mail : </label>
+						<input type="email" id="email">
+				</p>
+									<label for="password">Password : </label>
+						<input type="password" id="password">
+				</p>
+				<p><small>If you already have an account please login to the Gear Share Community above.</small></p>
+				<p>
+						<input type="submit" value="Continue">
+				</p>
+
+		</div>
+
+		<div>
+				<p>Review :</p>
+				<textarea name="" id="" cols="10" rows="5">Please share your renting experience here. </textarea>
+				<input type="submit" value="Submit">
+		</div>
+</form> -->

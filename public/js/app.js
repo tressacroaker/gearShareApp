@@ -1,5 +1,5 @@
-angular.module("gearApp", ['ui.router'])
-.config(function($stateProvider, $urlRouterProvider){
+var app = angular.module("gearApp", ['ui.router']);
+app.config(function($stateProvider, $urlRouterProvider){
   $stateProvider
   .state("login", {
       url: "/",
@@ -9,9 +9,9 @@ angular.module("gearApp", ['ui.router'])
       url: "/home",
       templateUrl: './templates/home.html',
     })
-    .state("rentals", {
-      url: "/rentals",
-      templateUrl: './templates/rentals.html',
+    .state("items", {
+      url: "/items",
+      templateUrl: './templates/items.html',
     })
     .state("messages", {
       url: "/messages",

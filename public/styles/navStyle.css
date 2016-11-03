@@ -1,16 +1,6 @@
+
 body {
   margin: 0;
-}
-
-.loginContainer {
-  background-color: #FFBD2B;
-}
-.loginForm,
-.createForm {
-  background: white;
-  padding: 40px;
-  max-width: 200px;
-  margin: 40px auto;
 }
 
 header {
@@ -27,10 +17,10 @@ ul.topnav{
     border-bottom: 0.1px solid #bbc0c4;
 }
 
-#search {
-  /*float: inline-end;*/
-  text-align: center;
-  
+.searchBox {
+height: 40px;
+width: 200px;
+text-align: center;
 }
 
 ul.topnav li {

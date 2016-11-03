@@ -1,5 +1,4 @@
-angular.module("gearApp")
-.controller("mainCtrl", function($scope, mainServ){
+angular.module("gearApp").controller("mainCtrl", function($scope, mainServ){
 
 $scope.test="this is the main test";
 
@@ -24,5 +23,12 @@ $scope.postNewUser = function(user){
     console.log(response);
   })
 };
+
+$scope.logout = function(){
+  mainServ.logout()
+  .then(function(resp){
+    
+  })
+}
 
 });

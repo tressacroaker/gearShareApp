@@ -38,7 +38,7 @@ gulp.task('less', function(){
 
 gulp.task('js', function(){
   return gulp.src(paths.jsSource)
-    .pipe(concat('bundle.js'))
+    .pipe(concat('bundle.js', {newLine: ';'}))
     .pipe(annotate())
     .pipe(uglify())
     .pipe(gulp.dest('./public'));
