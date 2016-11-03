@@ -27,11 +27,6 @@ ul.topnav{
     border-bottom: 0.1px solid #bbc0c4;
 }
 
-#search {
-  /*float: inline-end;*/
-  text-align: center;
-  
-}
 
 ul.topnav li {
   float: right;

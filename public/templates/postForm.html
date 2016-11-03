@@ -1,0 +1,30 @@
+<div class="itemform">
+    <form class="postForm" ng-submit="postNewItem(newItem)">
+        <h3> Post your gear below:</h3>
+        <h4>Gear Name:</h4>
+        <input type="text" class="itemName" ng-model="newItem.name" placeholder="Gear Name">
+        <br>
+        <h4>Rental Price:</h4>
+        <input type="text" class="itemPrice" ng-model="newItem.cost" placeholder="Rental Price">
+        <br>
+        <h4>Gear Description:</h4>
+        <input type="text" class="itemDesc" ng-model="newItem.desc" placeholder="Gear Description">
+        <br>
+        <h4>Upload Image</h4>
+
+        <input type="file" class="imgUpload" ngf-select ng-model="newItem.img" name="file" accept="image/*" ngf-max-size="2MB" ngf-model-invalid="errorFile">
+        <i ng-show="myForm.file.$error.maxSize">File too large
+              {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+        <img ng-show="myForm.file.$valid" ngf-thumbnail="newItem.img" class="thumb"> <button ng-click="newItem.img = null" ng-show="newItem.img">Remove</button>
+        <br>
+        <button ng-click="uploadPic(newItem.img)">Submit</button>
+        <span class="progress" ng-show="newItem.img.progress >= 0">
+            <div style="width:{{newItem.img.progress}}%"
+                ng-bind="newItem.img.progress + '%'"></div>
+    <br>
+    <input type="submit">
+  </form>
+</div>
+
+
+        <!-- ng-disabled="!myForm.$valid" -->

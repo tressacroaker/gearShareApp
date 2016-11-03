@@ -30,7 +30,7 @@ app.get('/current', userCtrl.getMe);
 app.get('/items', itemsCtrl.read);
 app.post('/items', itemsCtrl.create);
 app.put('/items/:id', itemsCtrl.update);
-app.delete('/items/:id', itemsCtrl.destroyer);
+app.delete('/items/:id', itemsCtrl.delete);
 
 mongoose.connect('mongodb://localhost: 27017/gearDB');
 mongoose.connection.once('open', function(){

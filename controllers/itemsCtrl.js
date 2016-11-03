@@ -35,7 +35,7 @@ module.exports = {
       }
     })
   },
-  destroyer: function(req, res){
+  delete: function(req, res){
     itemsModel
     ,findByIdAndRemove(req.params.id, req.body, function(err, result){
       if(err){

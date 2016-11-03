@@ -1,14 +1,17 @@
 app.service("mainServ",function($http){
 
   this.postNewUser = function(user){
-    console.log(user);
     return $http({
       method: "POST",
       url: "/login",
-      data:user
+      data: user
     }).then(function(response){
-      console.log()
-        return response;
+      return $http({
+        method: "GET",
+        url: "/current"
+      }).then(function(response){
+        return response.data;
+      })
     })
   };
 
@@ -21,6 +24,32 @@ app.service("mainServ",function($http){
     })
   };
 
+this.postNewItem = function(item){
+  return $http({
+    method: "POST",
+    url: "/items",
+    data: item
+  }).then(function(response){
+    return response;
+  })
+};
 
+  this.getAllItems = function(){
+    return $http({
+      method: "GET",
+      url: "/items",
+    }).then(function(response){
+      return response.data;
+    })
+  };
+
+  // this.deleteItem = function(itemToDelete){
+  //   return $http({
+  //     method: "DELETE",
+  //     url: "/items" + itemToDelete._id,
+  //   }).then(function(response){
+  //     return response;
+  //   })
+  // };
 
 });

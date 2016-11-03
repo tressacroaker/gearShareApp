@@ -1,4 +1,4 @@
-var app = angular.module("gearApp", ['ui.router']);
+var app = angular.module("gearApp", ['ui.router', 'ngFileUpload']);
 app.config(function($stateProvider, $urlRouterProvider){
   $stateProvider
   .state("login", {
@@ -12,6 +12,10 @@ app.config(function($stateProvider, $urlRouterProvider){
     .state("items", {
       url: "/items",
       templateUrl: './templates/items.html',
+    })
+    .state("postForm", {
+      url: "/postForm",
+      templateUrl: './templates/postForm.html',
     })
     .state("messages", {
       url: "/messages",
