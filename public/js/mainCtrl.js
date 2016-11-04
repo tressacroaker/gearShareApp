@@ -11,8 +11,8 @@ angular.module("gearApp")
                     $scope.getItems();
                     var user = $scope.currentUser;
                     user.listItems = [response._id];
-                    mainServ.putUser(user)
-                        .then(function(res) {
+                    mainServ.updateTheUser(user)
+                        .then(function(response) {
                             //anything else
                         })
                 })

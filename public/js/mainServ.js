@@ -30,6 +30,23 @@ this.postNewItem = function(item){
     url: "/items",
     data: item
   }).then(function(response){
+    // return $http({
+    //   method: "PUT",
+    //   url: "/current" + currentUser._id,
+    //   data:  currentUser
+    // }).then (function(response){
+    //   console.log(response)
+      return response;
+    // })
+  })
+};
+
+this.updateTheUser = function(userToUpdate){
+  return $http({
+    method: "PUT",
+    url: "/current" + currentUser._id,
+    data: userToUpdate
+  }).then(function(response){
     return response;
   })
 };
