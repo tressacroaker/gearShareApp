@@ -11,7 +11,7 @@
           </a>
         </li>
           <div class="search">
-      <input type="search" placeholder="search gear..." />
+      <input type="search" ng-model="list" placeholder="search gear..." />
           </div>
               <li>
           <a ui-sref="messages">
@@ -27,7 +27,7 @@
             </div>
           </a><div>
             <ul>
-              <li><a ui-sref="items">Post Gear</a></li>
+              <li><a ui-sref="postForm">Post Gear</a></li>
               <li><a ui-sref="items">Current Rentals</a></li>
             </ul>
           </div>
@@ -53,34 +53,8 @@
     </nav>
   </header>
 
+<div class="homeContainer">
+  <div class="allItems" ng-repeat="item in items | orderBy: items.tags | filter: list">
 
-
-<!-- below is the old navigation
-
-<ul class="topnav">
-  <img class="title" src="title.png"/>
-
-  <li class="dropdown">
-    <a ui-sref="items">Rentals <i class="fa fa-check-square-o" aria-hidden="true"></i></a>
-      <div class="dropdown-content">
-        <a id="downMenu" ui-sref="items">Post Gear</a>
-        <a id="downMenu" ui-sref="items">Current Rentals</a>
-      </div>
-  </li>
-
-  <li class="dropdown">
-    <a ui-sref="profile" class="dropbtn">Profile <i class="fa fa-user" aria-hidden="true"></i></a>
-      <div class="dropdown-content">
-        <a id="downMenu" ui-sref="profile">Edit Info</a>
-        <a id="downMenu" ui-sref="profile">Payment</a>
-        <a id="downMenu" ui-sref="postForm">Post Gear</a>
-        <a id="downMenu" ui-sref="items">Rentals</a>
-        <a id="downMenu" ui-sref="profile">Reviews</a>
-        <a id="downMenu" ng-click="logout()" ui-sref="login">Log Out</a>
-      </div>
-    </li>
-    <li>
-      <a ui-sref="messages">Messages <i class="fa fa-commenting" aria-hidden="true"></i></a>
-    </li>
-
-</ul> -->
+  </div>
+</div>

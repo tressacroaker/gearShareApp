@@ -10,6 +10,7 @@ var userModel = require('./../models/userModel.js');
       }
       userModel
       .findById(req.user._id)
+      .populate('items')
       .exec(function (err, result) {
         if (err) {
           return res.send(err);
@@ -22,7 +23,26 @@ var userModel = require('./../models/userModel.js');
       req.logout();
       console.log(req + " has been logged out");
       res.send();
+    },
+    update: function(req, res){
+      userModel
+      .findByIdAndUpdate(req.params.id,req.body,function(err, result){
+        if(err){
+          return res.send(err);
+        }
+        res.send(result);
+      });
+    },
+    delete: function(req, res){
+      userModel
+      .findByIdAndRemove(req.params.id, req.body, function(err, result){
+        if (err){
+          res.send(err);
+        }
+        res.send(result);
+      });
     }
+
   };
 
 

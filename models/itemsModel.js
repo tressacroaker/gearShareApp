@@ -1,12 +1,12 @@
-const mongoose = require('mongoose');
-const reviewModel = require('./reviewModel.js');
+var mongoose = require('mongoose');
+var reviewModel = require('./../models/reviewModel.js');
 
 var itemsSchema = new mongoose.Schema({
   active: Boolean,
   name: String,
   desc: String,
-  cost: String,
-  img: [String],
+  cost: Number,
+  img: String,
   rented: Boolean,
   returned: Boolean,
   tags:[String],

@@ -1,0 +1,34 @@
+
+
+<div class="profileContainer">
+  <div class="splitProfile splitWrap">
+    <div class="profile column">
+      <h1>Welcome, {{currentUser.firstName}} {{currentUser.lastName}}</h1>
+      <br>
+      <h2> First Name: {{currentUser.firstName}} </h2>
+    <input ng-hide="editUserButton" ng-model="currentUser.firstName" placeholder="First Name">
+      <br>
+      <h2> Last Name: {{currentUser.lastName}} </h2>
+      <input ng-hide="editUserButton" ng-model="currentUser.lastName" placeholder="Last Name">
+      <br>
+      <h2> Email: {{currentUser.email}} </h2>
+      <input ng-hide="editUserButton" ng-model="currentUser.email" placeholder="Email">
+      <br>
+      <h2> Password: {{currentUser.password}} </h2>
+      <input ng-hide="editUserButton" ng-model="currentUser.password" placeholder="Password">
+      <br>
+      <button ng-show="editUserButton" ng-click="editUserButton = false"> Edit Your Info </button>
+      <button ng-show="editUserButton" ng-click="updateTheUser(currentUser)"> Save Changes</button>
+      <button ng-click="deleteUserButton = false"> Delete Your Account</button>
+    </div>
+    <div class="profile column">
+      <h2>Here is your currently listed Gear:</h2>
+      <button ng-click = "getItems()">Press Here to Get Items</button>
+      <div class="currentUserItems" ng-repeat="item in items | orderBy: currentUser.items">{{currentUser.items}}</div>
+      <br>
+      <h2> Here are your current rentals from other Members</h2>
+
+    </div>
+
+  </div>
+</div>

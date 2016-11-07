@@ -158,8 +158,8 @@ small {
 /*below is the new navigation styles*/
 
 body { background: #fff;color: #222;-webkit-font-smoothing: antialiased;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 1.05em;font-weight: 400;height: auto !important;height: 100%;line-height: 1.6rem;min-height: 100%;}
-/*NAV*/
-	header {
+
+header {
 		background: #40C3BD;
 		border-bottom: 3px solid #3AB0AB;
 		box-shadow: 0 1px 1px 0 #3AB0AB;
@@ -167,14 +167,6 @@ body { background: #fff;color: #222;-webkit-font-smoothing: antialiased;font-fam
 		position: fixed;
 		width: 100%;
 		z-index: 1000;
-    /*color:#222;
-    font-smoothing: antialiased;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 1.05em;
-    font-weight: 400;
-    height:auto !important;
-    height: 100%;
-    line-height: 1.6rem;*/
 	}
 
 .search{
@@ -290,6 +282,49 @@ textarea:focus {
 
 
 /*above is the new navigation styles*/
+
+/*below is the styling for the user profile page*/
+
+.profileContainer {
+	padding: 20px 0;
+}
+
+.splitWrap {
+	display: flex;
+}
+
+.column {
+	padding: 10px;
+}
+/*
+.column:nth-of-type(odd) {
+	background: lightyellow;
+}*/
+
+.column:nth-of-type(even) {
+	background: lightgrey;
+}
+
+.splitProfile {
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.profile {
+	width: 48%;
+	margin-bottom: 2%;
+}
+
+.userItems {
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 48%;
+  margin-bottom: 2%;
+}
+
+/*above is the styling for the user profile page*/
 
 /*below is the OLD navigation styles*/
 

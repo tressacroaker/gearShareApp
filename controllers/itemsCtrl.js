@@ -5,7 +5,6 @@ module.exports = {
     itemsModel
     .find(req.query)
     .populate('contact')
-    // req.query isn't necessary
     .exec(function(err, result){
       if(err){
         res.send(err);
@@ -27,7 +26,6 @@ module.exports = {
   update: function(req, res){
     itemsModel
     .findByIdAndUpdate(req.params.id, req.body, function(err, result){
-      // req.params.id is the url
       if(err){
         res.send(err);
       } else {
@@ -37,12 +35,22 @@ module.exports = {
   },
   delete: function(req, res){
     itemsModel
-    ,findByIdAndRemove(req.params.id, req.body, function(err, result){
+    .findByIdAndRemove(req.params.id, req.body, function(err, result){
       if(err){
         res.send(err);
       } else {
         res.send(result);
       }
+    });
+  },
+  getAllItems: function(req, res) {
+    itemsModel
+    .findById(req.params.id)
+    .exec(function (err, result){
+      if (err) {
+        return res.send(err);
+      }
+      res.send(result);
     });
   }
 };
