@@ -1,4 +1,4 @@
-
+<nav-dir></nav-dir>
 
 <div class="profileContainer">
   <div class="splitProfile splitWrap">
@@ -23,7 +23,8 @@
     </div>
     <div class="profile column">
       <h2>Here is your currently listed Gear:</h2>
-      <div ng-repeat="items in items"></div>
+      <!-- <div ng-repeat="items in items"></div> -->
+      {{currentUser.items}}
       <br>
       <h2> Here are your current rentals from other Members</h2>
 
@@ -31,3 +32,13 @@
 
   </div>
 </div>
+<footer>
+<small> Thank you for being apart of the Gear Share Community!
+  <br>
+Follow us at :
+<i class="fa fa-facebook" aria-hidden="true"></i>
+<i class="fa fa-twitter" aria-hidden="true"></i>
+<i class="fa fa-google-plus" aria-hidden="true"></i>
+<i class="fa fa-pinterest-p" aria-hidden="true"></i>
+</small>
+</footer>

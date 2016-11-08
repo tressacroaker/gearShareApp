@@ -16,12 +16,11 @@ angular.module("gearApp").controller("mainCtrl", function($scope, mainServ, Uplo
 
           mainServ.postNewItem(item)
           .then(function(response) {
-              $scope.getItems();
               $scope.currentUser.items.push(response._id);
               mainServ.updateTheUser($scope.currentUser)
               .then(function(response) {
               $state.go("profile");
-
+              $scope.getItems();
               })
           })
         };
