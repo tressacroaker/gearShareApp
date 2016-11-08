@@ -1,14 +1,35 @@
 <nav-dir></nav-dir>
+<div id="postContainer">
+    <form class="postForm" ng-submit="postNewItem(newItem)">
+      <div>
+        <h4> Current Available Listing:</h4>
+        <p>
+        <label>Gear Name: {{currentItem.name}}</label>
+       <input ng-show="editItemButton" ng-model="currentItem.name" placeholder="Gear Name">
+        </p>
+        <p>
+        <label>Rental Price: {{currentItem.cost}}</label>
+				<input ng-show="editItemButton" ng-model="currentItem.cost" placeholder="Rental Price">
+      </p>
+      <p>
+        <label>Gear Description: {{currentItem.desc}}</label>
+				<input ng-show="editItemButton" ng-model="currentItem.desc" placeholder="Gear Description">
+      </p>
+      <p>
+        <label>Keyword Tags: {{currentItem.tags}}</label>
+				<input ng-show="editItemButton" ng-model="currentItem.tags" placeholder="Keyword Tags">
+      </p>
+      <p>
+        <small>* please seperate each tag seperated with a comma
+          (i.e winter, skis, bike, fishing)</small>
+      </p>
 
-<div class="gearCard">
-  <h4> {{items.name}
-    <br>
-    {{cost}}
-    <br>
-    {{desc}}
-    <br>
-    <button type="button" ng-click="updateTheItem(item._id)" name="rentbutton">Rent</button>
-
+				<button ng-hide="editItemButton" ng-click="editItemButton = true"> Edit Item </button>
+ 				<button ng-show="editItemButton" ng-click="updateTheItem(currentItem)"> Save Changes</button>
+  			<button ng-click="deleteItem(currentItem)"> Delete Item</button>
+        <button ng-click="rentItem(currentItem)"> Rent Item</button>
+		</div>
+  </form>
 </div>
 
 <footer>
