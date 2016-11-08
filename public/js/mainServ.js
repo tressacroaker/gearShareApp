@@ -6,14 +6,17 @@ app.service("mainServ",function($http){
       url: "/login",
       data: user
     }).then(function(response){
-      return $http({
-        method: "GET",
-        url: "/current"
-      }).then(function(response){
-        return response.data;
-      })
+      return response.data;
     })
   };
+  this.getCurrentUser = function(){
+    return $http({
+      method: "GET",
+      url: "/current"
+    }).then(function(response){
+      return response.data;
+    })
+  }
 
   this.logout = function(){
     return $http({
@@ -68,7 +71,7 @@ this.postNewItem = function(item){
   this.getAllItems = function(){
     return $http({
       method: "GET",
-      url: "/profile",
+      url: "/items",
     }).then(function(response){
       return response.data;
     })
@@ -77,7 +80,7 @@ this.postNewItem = function(item){
   this.deleteItem = function(itemToDelete){
     return $http({
       method: "DELETE",
-      url: "/items" + itemToDelete._id,
+      url: "/items/" + itemToDelete._id,
     }).then(function(response){
       return response;
     })

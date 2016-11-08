@@ -1,12 +1,6 @@
 angular.module("gearApp").controller("mainCtrl", function($scope, mainServ, Upload, $timeout, $state) {
 
-        $scope.users = [];
-        $scope.currentUser = "";
-        $scope.currentUser = {};
         $scope.deleteUserButton = true;
-        $scope.editUserButton = true;
-        $scope.items = [];
-        $scope.item = {};
 
         $scope.postNewItem = function(item) {
           console.log(item);
@@ -19,8 +13,8 @@ angular.module("gearApp").controller("mainCtrl", function($scope, mainServ, Uplo
               $scope.currentUser.items.push(response._id);
               mainServ.updateTheUser($scope.currentUser)
               .then(function(response) {
-              $state.go("profile");
               $scope.getItems();
+              $state.go("profile");
               })
           })
         };
@@ -45,24 +39,46 @@ angular.module("gearApp").controller("mainCtrl", function($scope, mainServ, Uplo
         $scope.postNewUser = function(user) {
             mainServ.postNewUser(user)
                 .then(function(response) {
-                    $scope.currentUser = response;
+                    $scope.getCurrentUser();
                     $state.go("home");
                 });
         };
+        $scope.getCurrentUser = function(){
+          mainServ.getCurrentUser()
+          .then(function(response){
+            $scope.currentUser = response;
+            console.log($scope.currentUser)
+          })
+        }
 
         $scope.deleteUser = function(currentUser) {
           mainServ.deleteUser(currentUser)
           .then(function(response){
-            console.log($scope.currentUser);
+            $state.go("home");
           });
         };
+        $scope.changePassword = function(currentUser){
+          mainServ.deleteUser(currentUser)
+          .then(function(response){
+            currentUser.password = currentUser.newPassword
+            mainServ.postNewUser(currentUser)
+            .then(function(response){
+              $scope.getCurrentUser();
+            })
+          })
+        }
 
         $scope.updateTheUser = function(currentUser){
-          mainServ.updateTheUser(currentUser)
-          .then(function(response){
-            console.log(response);
-            $scope.currentUser = response;
-          });
+          if(currentUser.newPassword){
+            $scope.changePassword(currentUser);
+          } else {
+            $scope.editUserButton = false;
+            mainServ.updateTheUser(currentUser)
+            .then(function(response){
+              console.log(response);
+              $scope.getCurrentUser();
+            });
+          }
         };
 
         // $scope.updateUser = function(currentUser){
@@ -75,9 +91,8 @@ angular.module("gearApp").controller("mainCtrl", function($scope, mainServ, Uplo
 
         $scope.logout = function() {
             mainServ.logout()
-                .then(function(resp) {
-
-                })
+            .then(function(resp) {
+            })
         }
 
         $scope.uploadPic = function(file) {
@@ -101,8 +116,6 @@ angular.module("gearApp").controller("mainCtrl", function($scope, mainServ, Uplo
             });
 
         };
-
-
     });
 
 // this goes back on line 11

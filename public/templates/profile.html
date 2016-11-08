@@ -1,24 +1,23 @@
 <nav-dir></nav-dir>
-
 <div class="profileContainer">
   <div class="splitProfile splitWrap">
     <div class="profile column">
       <h1>Welcome, {{currentUser.firstName}} {{currentUser.lastName}}</h1>
       <br>
       <h2> First Name: {{currentUser.firstName}} </h2>
-    <input ng-hide="editUserButton" ng-model="currentUser.firstName" placeholder="First Name">
+    <input ng-show="editUserButton" ng-model="currentUser.firstName" placeholder="First Name">
       <br>
       <h2> Last Name: {{currentUser.lastName}} </h2>
-      <input ng-hide="editUserButton" ng-model="currentUser.lastName" placeholder="Last Name">
+      <input ng-show="editUserButton" ng-model="currentUser.lastName" placeholder="Last Name">
       <br>
       <h2> Email: {{currentUser.email}} </h2>
-      <input ng-hide="editUserButton" ng-model="currentUser.email" placeholder="Email">
+      <input ng-show="editUserButton" ng-model="currentUser.email" placeholder="Email">
       <br>
-      <h2> New Password:</h2>
-      <input ng-hide="editUserButton" ng-model="currentUser.password" placeholder="Change Here">
+      <h2 ng-show="editUserButton"> New Password:</h2>
+      <input ng-show="editUserButton" ng-model="currentUser.newPassword" placeholder="Change Here">
       <br>
-      <button ng-show="editUserButton" ng-click="editUserButton = false"> Edit Your Info </button>
-      <button ng-click="updateTheUser(currentUser)"> Save Changes</button>
+      <button ng-hide="editUserButton" ng-click="editUserButton = true"> Edit Your Info </button>
+      <button ng-show="editUserButton" ng-click="updateTheUser(currentUser)"> Save Changes</button>
       <button ng-click="deleteUser(currentUser)"> Delete Your Account</button>
     </div>
     <div class="profile column">
@@ -33,7 +32,7 @@
   </div>
 </div>
 <footer>
-<small> Thank you for being apart of the Gear Share Community!
+<small> Thank you for being a part of the Gear Share Community!
   <br>
 Follow us at :
 <i class="fa fa-facebook" aria-hidden="true"></i>
