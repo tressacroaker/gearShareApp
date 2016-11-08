@@ -1,21 +1,28 @@
 <!-- <img src="{{currentUser.items[9].img}}" alt="" /> -->
-<div class="itemform">
+<div id="postContainer">
     <form class="postForm" ng-submit="postNewItem(newItem)">
-        <h3> Post your gear below:</h3>
-        <h4>Gear Name:</h4>
+      <div>
+        <h4> Post your gear below:</h4>
+        <p>
+        <label>Gear Name:</label>
         <input type="text" class="itemName" ng-model="newItem.name" placeholder="Gear Name">
-        <br>
-        <h4>Rental Price:</h4>
+        </p>
+        <p>
+        <label>Rental Price:</label>
         <input type="text" class="itemPrice" ng-model="newItem.cost" placeholder="Rental Price">
-        <br>
-        <h4>Gear Description:</h4>
+      </p>
+      <p>
+        <label>Gear Description:</label>
         <input type="text" class="itemDesc" ng-model="newItem.desc" placeholder="Gear Description">
-        <br>
-        <h4>Keyword Tags for item grouping: </h4>
-        <p>Each tag seperated by a comma.
-          (i.e winter, skis, bike, fishing)</p>
+      </p>
+      <p>
+        <label>Keyword Tags: </label>
         <input type="text" class="itemTags" ng-model="newItem.tags" placeholder="Keyword Tags">
-        <br>
+      </p>
+      <p>
+        <small>*each tag seperated by a comma
+          (i.e winter, skis, bike, fishing)</small>
+      </p>
         <!-- <h4>Upload Image</h4>
 
         <input type="file" class="imgUpload" ngf-select ng-model="newItem.img" name="file" accept="image/*" ngf-max-size="2MB" ngf-model-invalid="errorFile">
@@ -27,7 +34,7 @@
         <span class="progress" ng-show="newItem.img.progress >= 0">
             <div style="width:{{newItem.img.progress}}%" ng-bind="newItem.img.progress + '%'"></div>
         </span> -->
-        <button type="submit" name="button">Post Item</button>
-
+        <input type="submit"/>
+</div>
   </form>
 </div>

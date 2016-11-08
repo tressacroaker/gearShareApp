@@ -67,6 +67,18 @@ margin-bottom: 50px;
 	font-family: georgia, "trebuchet ms", arial, serif;
 }
 
+#postContainer {
+  /*display: flex;
+  flex-direction: row;*/
+	max-width: 600px;
+	margin: auto;
+	padding: 1em;
+	/*background:rgba(0,0,0,.1);*/
+	color: #333;
+	font-size: 1.4em;
+	font-family: georgia, "trebuchet ms", arial, serif;
+}
+
 h4 {
 	margin-top: 20px;
 	margin-bottom: 40px;
@@ -91,6 +103,8 @@ textarea {
 	font-family: inherit;
 	font-size: inherit;
   background: rgba(0,0,0,.02);
+  border: 2px solid #40C3BD;
+
 }
 input:focus,
 textarea:focus {
@@ -179,8 +193,7 @@ width: 60%;
 margin: auto;
 }
 
-input,
-textarea {
+.searchBox {
 	padding: 1.2em;
 	border: 4px solid #40C3BD;
 	border-radius: 10px;

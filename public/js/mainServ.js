@@ -35,6 +35,16 @@ this.updateTheUser = function(currentUser){
     });
   };
 
+  // this.updateUser = function(currentUser){
+  //   return $http({
+  //     method: "PUT",
+  //     url: "/current/" + currentUser._id,
+  //     data: currentUser
+  //   }).then(function(response){
+  //     return response.data;
+  //   });
+  // };
+
 
   this.deleteUser = function(currentUser){
     return $http({

@@ -48,25 +48,31 @@ angular.module("gearApp").controller("mainCtrl", function($scope, mainServ, Uplo
                 .then(function(response) {
                     $scope.currentUser = response;
                     $state.go("home");
-                    console.log($scope.currentUser);
-                })
+                });
         };
 
         $scope.deleteUser = function(currentUser) {
           mainServ.deleteUser(currentUser)
           .then(function(response){
+            console.log($scope.currentUser);
           });
         };
 
         $scope.updateTheUser = function(currentUser){
-          $scope.editUserButton = true;
-          mainServ.changeUser(currentUser)
+          mainServ.updateTheUser(currentUser)
           .then(function(response){
             console.log(response);
             $scope.currentUser = response;
-            location.reload();
           });
         };
+
+        // $scope.updateUser = function(currentUser){
+        //   mainServ.updateUser(currentUser)
+        //   .then(function(response){
+        //     $scope.currentUser = response;
+        //     $scope.currentUser();
+        //   })
+        // }
 
         $scope.logout = function() {
             mainServ.logout()
