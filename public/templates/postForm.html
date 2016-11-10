@@ -1,5 +1,4 @@
 <nav-dir></nav-dir>
-
 <div id="postContainer">
     <form class="postForm" ng-submit="postNewItem(newItem)">
       <div>
@@ -15,6 +14,10 @@
       <p>
         <label>Gear Description:</label>
         <input type="text" class="itemDesc" ng-model="newItem.desc" placeholder="Gear Description">
+      </p>
+      <p>
+        <label>Item Location:</label>
+        <input type="text" ng-model="newItem.location" placeholder="City, State, Zip Code">
       </p>
       <p>
         <label>Keyword Tags: </label>
@@ -39,13 +42,3 @@
 </div>
   </form>
 </div>
-<footer>
-<small> Thank you for being a part of the Gear Share Community!
-  <br>
-Follow us at :
-<i class="fa fa-facebook" aria-hidden="true"></i>
-<i class="fa fa-twitter" aria-hidden="true"></i>
-<i class="fa fa-google-plus" aria-hidden="true"></i>
-<i class="fa fa-pinterest-p" aria-hidden="true"></i>
-</small>
-</footer>

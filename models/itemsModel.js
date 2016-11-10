@@ -10,6 +10,7 @@ var itemsSchema = new mongoose.Schema({
   rented: Boolean,
   returned: Boolean,
   tags:[String],
+  location: [String],
   contact: {type: mongoose.Schema.Types.ObjectId, ref: "User"},
   availability: Boolean,
   review: [{

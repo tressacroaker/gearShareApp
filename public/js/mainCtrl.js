@@ -1,21 +1,20 @@
 angular.module("gearApp").controller("mainCtrl", function($scope, mainServ, Upload, $timeout, $state) {
 
         $scope.deleteUserButton = true;
+        $scope.deleteItemButton = true;
 
         $scope.postNewItem = function(item) {
           console.log(item);
           if($scope.currentUser){
-              item.contact = [$scope.currentUser._id];
+              item.contact = $scope.currentUser._id;
           }
 
           mainServ.postNewItem(item)
           .then(function(response) {
+            $scope.getItems();
               $scope.currentUser.items.push(response._id);
-              mainServ.updateTheUser($scope.currentUser)
-              .then(function(response) {
-              $scope.getItems();
-              $state.go("profile");
-              })
+              $scope.updateTheUser($scope.currentUser);
+              $state.go("items")
           })
         };
 
@@ -34,6 +33,24 @@ angular.module("gearApp").controller("mainCtrl", function($scope, mainServ, Uplo
             $scope.getItems();
             location.reload();
           })
+        };
+
+        $scope.getCurrentItem = function() {
+          mainServ.getCurrentItem()
+          .then(function(response){
+            $scope.currentItem = response;
+            console.log($scope.currentItem)
+          })
+        };
+
+        $scope.updateTheItem = function(currentItem){
+            $scope.editItemButton = false;
+            console.log("updated item",currentItem);
+            mainServ.updateTheItem(currentItem)
+            .then(function(response){
+              console.log(response);
+              $scope.getCurrentItem();
+            });
         };
 
         $scope.postNewUser = function(user) {
@@ -80,14 +97,6 @@ angular.module("gearApp").controller("mainCtrl", function($scope, mainServ, Uplo
             });
           }
         };
-
-        // $scope.updateUser = function(currentUser){
-        //   mainServ.updateUser(currentUser)
-        //   .then(function(response){
-        //     $scope.currentUser = response;
-        //     $scope.currentUser();
-        //   })
-        // }
 
         $scope.logout = function() {
             mainServ.logout()

@@ -38,17 +38,6 @@ this.updateTheUser = function(currentUser){
     });
   };
 
-  // this.updateUser = function(currentUser){
-  //   return $http({
-  //     method: "PUT",
-  //     url: "/current/" + currentUser._id,
-  //     data: currentUser
-  //   }).then(function(response){
-  //     return response.data;
-  //   });
-  // };
-
-
   this.deleteUser = function(currentUser){
     return $http({
       method: "DELETE",
@@ -67,6 +56,26 @@ this.postNewItem = function(item){
       return response.data;
   })
 };
+
+this.getCurrentItem = function(){
+  return $http({
+    method: "GET",
+    url: "/items"
+  }).then(function(response){
+    return response.data;
+  })
+};
+
+this.updateTheItem = function(currentItem){
+    return $http({
+      method: "PUT",
+      url: "/items/" + currentItem._id,
+      data: currentItem
+    }).then(function(response){
+      console.log(response);
+      return response.data;
+    });
+  };
 
   this.getAllItems = function(){
     return $http({

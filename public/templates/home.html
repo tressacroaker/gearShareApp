@@ -1,18 +1,32 @@
-
 <nav-dir></nav-dir>
-
-<div class="homeContainer">
-  <div class="allItems" ng-repeat="item in items | orderBy: items.tags | filter: list">
-
-  </div>
-</div>
-<footer>
-<small> Thank you for being a part of the Gear Share Community!
-  <br>
-Follow us at :
-<i class="fa fa-facebook" aria-hidden="true"></i>
-<i class="fa fa-twitter" aria-hidden="true"></i>
-<i class="fa fa-google-plus" aria-hidden="true"></i>
-<i class="fa fa-pinterest-p" aria-hidden="true"></i>
-</small>
-</footer>
+<div id="postContainer">
+        <form class="allItems" ng-repeat="oneItem in allItems | orderBy: items.tags | filter: list">
+          <div>
+            <h4> Current Available Listing:</h4>
+            <p>
+            <label>Gear Name: {{oneItem.name}}</label>
+           <input ng-show="editItemButton" ng-model="oneItem.name" placeholder="Gear Name">
+            </p>
+            <p>
+            <label>Rental Price: {{oneItem.cost}}</label>
+    				<input ng-show="editItemButton" ng-model="oneItem.cost" placeholder="Rental Price">
+          </p>
+          <p>
+            <label>Gear Description: {{oneItem.desc}}</label>
+    				<input ng-show="editItemButton" ng-model="oneItem.desc" placeholder="Gear Description">
+          </p>
+          <p>
+            <label>Keyword Tags: {{oneItem.tags}}</label>
+    				<input ng-show="editItemButton" ng-model="oneItem.tags" placeholder="Keyword Tags">
+          </p>
+          <p>
+            <label>Item Location: {{oneItem.location}}</label>
+            <input ng-show="editItemButton" ng-model="oneItem.tags" placeholder="City, State, Zip Code">
+          </p>
+          <p>
+          </p>
+            <button ng-hide="editItemButton" ng-click="rentItem(oneItem)"> Rent Item</button>
+            <button ng-hide="editItemButton" ng-click="rentItem(oneItem)"> Contact Renter</button>
+    		</div>
+      </form>
+    </div>

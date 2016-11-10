@@ -1,44 +1,35 @@
 <nav-dir></nav-dir>
-<div id="postContainer">
-    <form class="postForm" ng-submit="postNewItem(newItem)">
+<div id="postContainer" ng-init="getCurrentUser()">
+    <form class="postForm" ng-repeat="userItem in currentUser.items">
       <div>
         <h4> Current Available Listing:</h4>
         <p>
-        <label>Gear Name: {{currentItem.name}}</label>
-       <input ng-show="editItemButton" ng-model="currentItem.name" placeholder="Gear Name">
+        <label>Gear Name: {{userItem.name}}</label>
+       <input ng-show="editItemButton" ng-model="userItem.name" placeholder="Gear Name">
         </p>
         <p>
-        <label>Rental Price: {{currentItem.cost}}</label>
-				<input ng-show="editItemButton" ng-model="currentItem.cost" placeholder="Rental Price">
+        <label>Rental Price: {{userItem.cost}}</label>
+				<input ng-show="editItemButton" ng-model="userItem.cost" placeholder="Rental Price">
       </p>
       <p>
-        <label>Gear Description: {{currentItem.desc}}</label>
-				<input ng-show="editItemButton" ng-model="currentItem.desc" placeholder="Gear Description">
+        <label>Gear Description: {{userItem.desc}}</label>
+				<input ng-show="editItemButton" ng-model="userItem.desc" placeholder="Gear Description">
       </p>
       <p>
-        <label>Keyword Tags: {{currentItem.tags}}</label>
-				<input ng-show="editItemButton" ng-model="currentItem.tags" placeholder="Keyword Tags">
+        <label>Keyword Tags: {{userItem.tags}}</label>
+				<input ng-show="editItemButton" ng-model="userItem.tags" placeholder="Keyword Tags">
       </p>
       <p>
-        <small>* please seperate each tag seperated with a comma
-          (i.e winter, skis, bike, fishing)</small>
+        <label>Item Location: {{userItem.location}}</label>
+        <input ng-show="editItemButton" ng-model="userItem.tags" placeholder="City, State, Zip Code">
+      </p>
+      <p>
       </p>
 
 				<button ng-hide="editItemButton" ng-click="editItemButton = true"> Edit Item </button>
- 				<button ng-show="editItemButton" ng-click="updateTheItem(currentItem)"> Save Changes</button>
-  			<button ng-click="deleteItem(currentItem)"> Delete Item</button>
-        <button ng-click="rentItem(currentItem)"> Rent Item</button>
+ 				<button ng-show="editItemButton" ng-click="updateTheItem(userItem); editItemButton = false"> Save Changes</button>
+  			<button ng-click="deleteItem(userItem)"> Delete Item</button>
+        <button ng-hide="editItemButton" ng-click="rentItem(userItem)"> Contact Rentee</button>
 		</div>
   </form>
 </div>
-
-<footer>
-<small> Thank you for being a part of the Gear Share Community!
-  <br>
-Follow us at :
-<i class="fa fa-facebook" aria-hidden="true"></i>
-<i class="fa fa-twitter" aria-hidden="true"></i>
-<i class="fa fa-google-plus" aria-hidden="true"></i>
-<i class="fa fa-pinterest-p" aria-hidden="true"></i>
-</small>
-</footer>
