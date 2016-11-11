@@ -35,8 +35,11 @@
       </p>
 
 				<button ng-hide="editItemButton" ng-click="editItemButton = true"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+
  				<button ng-show="editItemButton" ng-click="updateTheItem(userItem); editItemButton = false"> Save Changes</button>
+
   			<button ng-click="deleteTheItem(userItem)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+
         <button ng-hide="editItemButton" ng-click="rentItem(userItem)"> Contact Rentee</button>
 		</div>
   </form>

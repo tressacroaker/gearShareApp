@@ -13,6 +13,20 @@ footer {
   border: none;
 }
 
+#splitContainer {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+#left {
+  display: block;
+}
+
+#right {
+  display: block;
+}
+
 /*below is the login front page styles*/
 
 .logo {
@@ -50,7 +64,7 @@ form input:not([type=submit]) {
 /* 3- fluid textarea */
 div + div {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 }
 textarea {
 	flex: 1; /* fluid height */
@@ -167,7 +181,7 @@ small {
 /* small screens */
 @media (max-width: 600px) {
 	form {
-		flex-direction: column;
+		flex-direction: row;
 	}
 	form p {
 		display: block;

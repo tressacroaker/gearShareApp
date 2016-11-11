@@ -1,28 +1,47 @@
 <nav-dir></nav-dir>
-<div class="profileContainer">
-  <div class="splitProfile splitWrap">
-    <div class="profile column">
-      <h1>Welcome, {{currentUser.firstName}} {{currentUser.lastName}}</h1>
+<div id="splitContainer">
+  <div id="left">
+<div id="postedContainer">
+  <form class="postForm">
+    <div>
+    <h2>Welcome, </h2>
+     <h2>{{currentUser.firstName}} {{currentUser.lastName}}</h2>
       <br>
-      <h2> First Name: {{currentUser.firstName}} </h2>
+      <label> First Name:</label>
+      <input ng-hide="editUserButton" id="editItemInput" type="text" placeholder="{{currentUser.firstName}}">
+
     <input ng-show="editUserButton" ng-model="currentUser.firstName" placeholder="First Name">
       <br>
-      <h2> Last Name: {{currentUser.lastName}} </h2>
+      <label> Last Name: </label>
+      <input ng-hide="editUserButton" id="editItemInput" type="text" placeholder="{{currentUser.lastName}}">
+
       <input ng-show="editUserButton" ng-model="currentUser.lastName" placeholder="Last Name">
       <br>
-      <h2> Email: {{currentUser.email}} </h2>
+      <label> Email:</label>
+      <input ng-hide="editUserButton" id="editItemInput" type="text" placeholder="{{currentUser.email}}">
+
       <input ng-show="editUserButton" ng-model="currentUser.email" placeholder="Email">
       <br>
-      <h2 ng-show="editUserButton"> New Password:</h2>
+      <label ng-show="editUserButton"> New Password:</label>
       <input ng-show="editUserButton" ng-model="currentUser.newPassword" placeholder="Change Here">
       <br>
-      <button ng-hide="editUserButton" ng-click="editUserButton = true"> Edit Your Info </button>
-      <button ng-show="editUserButton" ng-click="updateTheUser(currentUser)"> Save Changes</button>
-      <button ng-click="deleteUser(currentUser)"> Delete Your Account</button>
-    </div>
-    <div class="profile column">
 
+      <button ng-hide="editUserButton" ng-click="editUserButton = true">Edit Your Info</button>
+      <button ng-show="editUserButton" ng-click="updateTheUser(currentUser); editUserButton = false"> Save Changes</button>
+      <button ng-click="deleteUser(currentUser)">Delete Account</button>
     </div>
-
-  </div>
+  </form>
+</div>
+</div>
+<div id="right">
+  <div id="postedContainer">
+    <form class="postForm">
+    <div>
+      <h2>Payment Info: </h2>
+      <br>
+      <label> Name On Card: </label>
+          </div>
+        </form>
+      </div>
+    </div>
 </div>
