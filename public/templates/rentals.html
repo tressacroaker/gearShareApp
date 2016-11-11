@@ -1,0 +1,44 @@
+<nav-dir></nav-dir>
+
+<div id="postedContainer">
+  <form class="rentedItems" ng-repeat="rentedItem in currentUser.itemsRented">
+      <div>
+        <h4>Gear You've Rented:</h4>
+        <p>
+        <label>Gear Name: </label>
+        <input id="editItemInput" type="text" placeholder="{{rentedItem.name}}">
+        </p>
+        <p>
+        <label>Rental Price: </label>
+        <input id="editItemInput" type="text" placeholder="{{rentedItem.cost}}">
+      </p>
+      <p>
+        <label>Gear Description: </label>
+        <input id="editItemInput" type="text" placeholder="{{rentedItem.desc}}">
+      </p>
+      <p>
+        <label>Keyword Tags: </label>
+        <input id="editItemInput" type="text" placeholder="{{rentedItem.tags}}">
+      </p>
+      <p>
+        <label>Item Location: </label>
+        <input id="editItemInput" type="text" placeholder="{{rentedItem.location}}">
+      </p>
+        <input type="submit" value="Rent Item"/>
+        <button type="button">Contact Renter</button>
+</div>
+  </form>
+</div>
+
+
+
+
+<!--
+<input type="checkbox">
+  <button ng-hide="editItemButton" ng-click="editItemButton = true">Rented</button>
+
+  <button ng-show="editItemButton" ng-click="updateTheItem(userItem); editItemButton = false"> Save Changes</button>
+
+  <button ng-click="deleteTheItem(userItem)"><Delete Item</button>
+
+  <button ng-hide="editItemButton" ng-click="rentItem(userItem)"> Return Gear</button> -->

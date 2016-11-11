@@ -1,4 +1,5 @@
-angular.module("gearApp").controller("mainCtrl", function($scope, mainServ, Upload, $timeout, $state) {
+angular.module("gearApp")
+.controller("mainCtrl", function($scope, $state, mainServ, $timeout) {
 
         $scope.deleteUserButton = true;
         $scope.deleteItemButton = true;
@@ -7,7 +8,7 @@ angular.module("gearApp").controller("mainCtrl", function($scope, mainServ, Uplo
           console.log(item);
           if($scope.currentUser){
               item.contact = $scope.currentUser._id;
-          }
+          };
 
           mainServ.postNewItem(item)
           .then(function(response) {
@@ -15,7 +16,7 @@ angular.module("gearApp").controller("mainCtrl", function($scope, mainServ, Uplo
               $scope.currentUser.items.push(response._id);
               $scope.updateTheUser($scope.currentUser);
               $state.go("items")
-          })
+          });
         };
 
         $scope.getItems = function(){
@@ -23,7 +24,7 @@ angular.module("gearApp").controller("mainCtrl", function($scope, mainServ, Uplo
           .then(function(response){
             $scope.allItems = response;
             console.log($scope.allItems);
-          })
+          });
         };
         $scope.getItems();
 
@@ -42,7 +43,7 @@ angular.module("gearApp").controller("mainCtrl", function($scope, mainServ, Uplo
           .then(function(response){
             $scope.currentItem = response;
             console.log($scope.currentItem)
-          })
+          });
         };
 
         $scope.updateTheItem = function(currentItem){
@@ -66,6 +67,18 @@ angular.module("gearApp").controller("mainCtrl", function($scope, mainServ, Uplo
           .then(function(response){
             $scope.currentUser = response;
             console.log($scope.currentUser)
+          });
+        };
+
+        $scope.updateRentals = function(item){
+          item.rented = true;
+          mainServ.updateTheItem(item)
+          .then(function(response){
+            $scope.getAllItems();
+            $scope.currentUser.rentedItems.push(item._id);
+            mainServ.updateTheUser($scope.currentUser).then(function(resp){
+              $scope.getCurrentUser();
+            })
           })
         }
 
@@ -82,9 +95,9 @@ angular.module("gearApp").controller("mainCtrl", function($scope, mainServ, Uplo
             mainServ.postNewUser(currentUser)
             .then(function(response){
               $scope.getCurrentUser();
-            })
-          })
-        }
+            });
+          });
+        };
 
         $scope.updateTheUser = function(currentUser){
           if(currentUser.newPassword){
@@ -96,37 +109,13 @@ angular.module("gearApp").controller("mainCtrl", function($scope, mainServ, Uplo
               console.log(response);
               $scope.getCurrentUser();
             });
-          }
+          };
         };
 
         $scope.logout = function() {
             mainServ.logout()
             .then(function(resp) {
-            })
-        }
-
-        $scope.uploadPic = function(file) {
-            file.upload = Upload.upload({
-                url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
-                data: {
-                    username: $scope.username,
-                    file: file
-                },
             });
-            file.upload.then(function(response) {
-                $timeout(function() {
-                    file.result = response.data;
-                });
-            }, function(response) {
-                if (response.status > 0)
-                    $scope.errorMsg = response.status + ': ' + response.data;
-            }, function(evt) {
-                // Math.min is to fix IE which reports 200% sometimes
-                file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
-            });
-
         };
-    });
 
-// this goes back on line 11
-            // item.img = document.getElementById('picthing').src;
+});

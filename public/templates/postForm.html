@@ -4,6 +4,10 @@
       <div>
         <h4> Post Your Gear Below:</h4>
         <p>
+        <label>Upload Picture:</label>
+        <input type="file" name="filename" accept="image/gif, image/jpeg, image/png" src="url">
+        </p>
+        <p>
         <label>Gear Name:</label>
         <input type="text" class="itemName" ng-model="newItem.name" placeholder="Gear Name">
         </p>
@@ -27,17 +31,6 @@
         <small>* please seperate each tag seperated with a comma
           (i.e winter, skis, bike, fishing)</small>
       </p>
-        <!-- <h4>Upload Image</h4>
-
-        <input type="file" class="imgUpload" ngf-select ng-model="newItem.img" name="file" accept="image/*" ngf-max-size="2MB" ngf-model-invalid="errorFile">
-        <i ng-show="myForm.file.$error.maxSize">File too large
-              {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
-        <img id="picthing" ng-show="myForm.file.$valid" ngf-thumbnail="newItem.img" class="thumb"> <button ng-click="newItem.img = null" ng-show="newItem.img">Remove</button>
-        <br>
-        <button ng-click="uploadPic(newItem.img)">Upload Image</button>
-        <span class="progress" ng-show="newItem.img.progress >= 0">
-            <div style="width:{{newItem.img.progress}}%" ng-bind="newItem.img.progress + '%'"></div>
-        </span> -->
         <input type="submit"/>
 </div>
   </form>

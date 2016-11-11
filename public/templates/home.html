@@ -1,31 +1,30 @@
 <nav-dir></nav-dir>
 <div id="postedContainer">
-        <form class="allItems" ng-repeat="oneItem in allItems | orderBy: items.tags | filter: list">
-          <div>
-            <h4> Current Available Listing:</h4>
-            <p>
-            <label>Gear Name: </label>
-            <input id="editItemInput" type="text" placeholder="{{oneItem.name}}">
-            </p>
-            <p>
-            <label>Rental Price: </label>
-            <input id="editItemInput" type="text" placeholder="{{oneItem.cost}}">
+  <form class="allItems" ng-if="!oneItem.rented" ng-repeat="oneItem in allItems | filter: list">
+      <div>
+        <h4> Current Available Listing:</h4>
+          <p>
+          <label>Gear Name: </label>
+          <input id="editItemInput" type="text" placeholder="{{oneItem.name}}">
           </p>
           <p>
-            <label>Gear Description: </label>
-            <input id="editItemInput" type="text" placeholder="{{oneItem.desc}}">
+          <label>Rental Price: </label>
+          <input id="editItemInput" type="text" placeholder="{{oneItem.cost}}">
           </p>
           <p>
-            <label>Keyword Tags: </label>
-            <input id="editItemInput" type="text" placeholder="{{oneItem.tags}}">
+          <label>Gear Description: </label>
+          <input id="editItemInput" type="text" placeholder="{{oneItem.desc}}">
           </p>
           <p>
-            <label>Item Location: </label>
-            <input id="editItemInput" type="text" placeholder="{{oneItem.location}}">
+          <label>Keyword Tags: </label>
+          <input id="editItemInput" type="text" placeholder="{{oneItem.tags}}">
           </p>
-
-            <button ng-hide="editItemButton" ng-click="rentItem(oneItem)"> Rent Item</button>
-            <button ng-hide="editItemButton" ng-click="rentItem(oneItem)"> Contact Renter</button>
+          <p>
+          <label>Item Location: </label>
+          <input id="editItemInput" type="text" placeholder="{{oneItem.location}}">
+          </p>
+          <button ng-click="updateRentals(oneItem)">Rent Item</button>
+          <button type="button">Contact Renter</button>
     		</div>
       </form>
     </div>

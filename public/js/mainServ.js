@@ -1,4 +1,4 @@
-app.service("mainServ",function($http){
+angular.module("gearApp").service("mainServ",function($http){
 
   this.postNewUser = function(user){
     return $http({

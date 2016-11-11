@@ -4,8 +4,16 @@
 <div id="postedContainer">
   <form class="postForm">
     <div>
+    <img ng-src="{{curentUser.picture}}"/>
+    <br>
+    <input ng-hide="editUserButton" type="file" ng-model="currentUser.picture"/>
+    <br>
+    <input ng-hide="editUserButton" ng-model="currentUser.picture" placeholder="Upload New Image">
+    <br>
     <h2>Welcome, </h2>
-     <h2>{{currentUser.firstName}} {{currentUser.lastName}}</h2>
+    <br>
+    
+    <h2>{{currentUser.firstName}} {{currentUser.lastName}}</h2>
       <br>
       <label> First Name:</label>
       <input ng-hide="editUserButton" id="editItemInput" type="text" placeholder="{{currentUser.firstName}}">

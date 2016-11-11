@@ -10,7 +10,7 @@ var userModel = require('./../models/userModel.js');
       }
       userModel
       .findById(req.user._id)
-      .populate('items')
+      .populate(['items','itemsRented'])
       .exec(function (err, result) {
         if (err) {
           return res.send(err);
@@ -44,24 +44,3 @@ var userModel = require('./../models/userModel.js');
     }
 
   };
-
-
-
-
-
-
-// module.exports = {
-//   getAll: function(req, res){
-//     UserModel
-//     .find()
-//     // req.query isn't necessary
-//     .exec(function(err, result){
-//       if(err){
-//         res.send(err);
-//       } else {
-//         res.send(result);
-//       }
-//     });
-//
-//   },
-// };

@@ -9,6 +9,10 @@ footer {
   justify-content: center;
 }
 
+#profilePic {
+  border-radius: 100px;
+}
+
 #editItemInput {
   border: none;
 }
