@@ -86,7 +86,7 @@ this.updateTheItem = function(currentItem){
     })
   };
 
-  this.deleteItem = function(itemToDelete){
+  this.deleteTheItem = function(itemToDelete){
     return $http({
       method: "DELETE",
       url: "/items/" + itemToDelete._id,

@@ -27,11 +27,13 @@ angular.module("gearApp").controller("mainCtrl", function($scope, mainServ, Uplo
         };
         $scope.getItems();
 
-        $scope.deleteItem = function(itemToRemove){
-          mainServ.deleteTheItem(itemToRemove)
+        $scope.deleteTheItem = function(itemToDelete){
+          $scope.deleteItemButton = false;
+          mainServ.deleteTheItem(itemToDelete)
           .then(function(response){
             $scope.getItems();
-            location.reload();
+            // location.reload();
+            // $state.go("home");
           })
         };
 
@@ -45,7 +47,6 @@ angular.module("gearApp").controller("mainCtrl", function($scope, mainServ, Uplo
 
         $scope.updateTheItem = function(currentItem){
             $scope.editItemButton = false;
-            console.log("updated item",currentItem);
             mainServ.updateTheItem(currentItem)
             .then(function(response){
               console.log(response);

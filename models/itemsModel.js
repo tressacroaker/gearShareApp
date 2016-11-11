@@ -9,8 +9,8 @@ var itemsSchema = new mongoose.Schema({
   img: String,
   rented: Boolean,
   returned: Boolean,
-  tags:[String],
-  location: [String],
+  tags:String,
+  location: String,
   contact: {type: mongoose.Schema.Types.ObjectId, ref: "User"},
   availability: Boolean,
   review: [{

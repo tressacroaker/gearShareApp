@@ -9,6 +9,10 @@ footer {
   justify-content: center;
 }
 
+#editItemInput {
+  border: none;
+}
+
 /*below is the login front page styles*/
 
 .logo {
@@ -84,6 +88,19 @@ margin-bottom: 50px;
 	font-family: georgia, "trebuchet ms", arial, serif;
 }
 
+#postedContainer {
+  /*display: flex;
+  flex-direction: row;*/
+	max-width: 450px;
+	margin: auto;
+	padding: 1em;
+	/*background:rgba(0,0,0,.1);*/
+	color: #333;
+	font-size: 1.2em;
+	font-family: georgia, "trebuchet ms", arial, serif;
+}
+
+
 h4 {
 	margin-top: 20px;
 	margin-bottom: 40px;
@@ -129,6 +146,7 @@ label {
 	margin-right: .5em;
 	text-align: right;
 }
+
 input[type="submit"], button {
 	margin-left: auto;
 }

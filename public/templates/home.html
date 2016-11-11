@@ -1,30 +1,29 @@
 <nav-dir></nav-dir>
-<div id="postContainer">
+<div id="postedContainer">
         <form class="allItems" ng-repeat="oneItem in allItems | orderBy: items.tags | filter: list">
           <div>
             <h4> Current Available Listing:</h4>
             <p>
-            <label>Gear Name: {{oneItem.name}}</label>
-           <input ng-show="editItemButton" ng-model="oneItem.name" placeholder="Gear Name">
+            <label>Gear Name: </label>
+            <input id="editItemInput" type="text" placeholder="{{oneItem.name}}">
             </p>
             <p>
-            <label>Rental Price: {{oneItem.cost}}</label>
-    				<input ng-show="editItemButton" ng-model="oneItem.cost" placeholder="Rental Price">
+            <label>Rental Price: </label>
+            <input id="editItemInput" type="text" placeholder="{{oneItem.cost}}">
           </p>
           <p>
-            <label>Gear Description: {{oneItem.desc}}</label>
-    				<input ng-show="editItemButton" ng-model="oneItem.desc" placeholder="Gear Description">
+            <label>Gear Description: </label>
+            <input id="editItemInput" type="text" placeholder="{{oneItem.desc}}">
           </p>
           <p>
-            <label>Keyword Tags: {{oneItem.tags}}</label>
-    				<input ng-show="editItemButton" ng-model="oneItem.tags" placeholder="Keyword Tags">
+            <label>Keyword Tags: </label>
+            <input id="editItemInput" type="text" placeholder="{{oneItem.tags}}">
           </p>
           <p>
-            <label>Item Location: {{oneItem.location}}</label>
-            <input ng-show="editItemButton" ng-model="oneItem.tags" placeholder="City, State, Zip Code">
+            <label>Item Location: </label>
+            <input id="editItemInput" type="text" placeholder="{{oneItem.location}}">
           </p>
-          <p>
-          </p>
+
             <button ng-hide="editItemButton" ng-click="rentItem(oneItem)"> Rent Item</button>
             <button ng-hide="editItemButton" ng-click="rentItem(oneItem)"> Contact Renter</button>
     		</div>

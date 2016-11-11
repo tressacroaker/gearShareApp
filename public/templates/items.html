@@ -1,34 +1,42 @@
 <nav-dir></nav-dir>
-<div id="postContainer" ng-init="getCurrentUser()">
+<div id="postedContainer" ng-init="()">
     <form class="postForm" ng-repeat="userItem in currentUser.items">
       <div>
-        <h4> Current Available Listing:</h4>
+        <h4> Your Posted Item:</h4>
         <p>
-        <label>Gear Name: {{userItem.name}}</label>
-       <input ng-show="editItemButton" ng-model="userItem.name" placeholder="Gear Name">
+        <label>Gear Name: </label>
+        <input ng-hide="editItemButton" id="editItemInput" type="text" placeholder="{{userItem.name}}">
+
+       <input ng-show="editItemButton" ng-model="userItem.name" placeholder="{{userItem.name}}">
         </p>
         <p>
-        <label>Rental Price: {{userItem.cost}}</label>
-				<input ng-show="editItemButton" ng-model="userItem.cost" placeholder="Rental Price">
+        <label>Rental Price: </label>
+        <input ng-hide="editItemButton" id="editItemInput" type="text" placeholder="{{userItem.cost}}">
+
+				<input ng-show="editItemButton" ng-model="userItem.cost" placeholder="{{userItem.cost}}">
       </p>
       <p>
-        <label>Gear Description: {{userItem.desc}}</label>
-				<input ng-show="editItemButton" ng-model="userItem.desc" placeholder="Gear Description">
+        <label>Gear Description: </label>
+        <input ng-hide="editItemButton" id="editItemInput" type="text" placeholder="{{userItem.desc}}">
+
+				<input ng-show="editItemButton" ng-model="userItem.desc" placeholder="{{userItem.desc}}">
       </p>
       <p>
-        <label>Keyword Tags: {{userItem.tags}}</label>
-				<input ng-show="editItemButton" ng-model="userItem.tags" placeholder="Keyword Tags">
+        <label>Keyword Tags: </label>
+        <input ng-hide="editItemButton" id="editItemInput" type="text" placeholder="{{userItem.tags}}">
+
+				<input ng-show="editItemButton" ng-model="userItem.tags" placeholder="{{userItem.tags}}">
       </p>
       <p>
-        <label>Item Location: {{userItem.location}}</label>
-        <input ng-show="editItemButton" ng-model="userItem.tags" placeholder="City, State, Zip Code">
-      </p>
-      <p>
+        <label>Item Location: </label>
+        <input ng-hide="editItemButton" id="editItemInput" type="text" placeholder="{{userItem.location}}">
+
+        <input ng-show="editItemButton" ng-model="userItem.tags" placeholder="{{userItem.location}}">
       </p>
 
-				<button ng-hide="editItemButton" ng-click="editItemButton = true"> Edit Item </button>
+				<button ng-hide="editItemButton" ng-click="editItemButton = true"><i class="fa fa-pencil" aria-hidden="true"></i></button>
  				<button ng-show="editItemButton" ng-click="updateTheItem(userItem); editItemButton = false"> Save Changes</button>
-  			<button ng-click="deleteItem(userItem)"> Delete Item</button>
+  			<button ng-click="deleteTheItem(userItem)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
         <button ng-hide="editItemButton" ng-click="rentItem(userItem)"> Contact Rentee</button>
 		</div>
   </form>
