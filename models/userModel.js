@@ -10,6 +10,13 @@ var userSchema = new mongoose.Schema({
   password: {type: String, required: true},
   picture: String,
   about: String,
+  payment: {
+    nameOnCard: String,
+    cardNumber: Number,
+    securityCode: Number,
+    expirationDate: Number,
+    zipCode: Number
+  },
   items: [{type: mongoose.Schema.Types.ObjectId, ref: "Items"}],
   itemsRented: [{type: mongoose.Schema.Types.ObjectId, ref: "Items"}]
 });
