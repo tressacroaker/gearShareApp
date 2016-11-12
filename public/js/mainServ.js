@@ -66,6 +66,15 @@ this.getCurrentItem = function(){
   })
 };
 
+this.getItemsRented = function(){
+  return $http({
+    method: "GET",
+    url: "/rentals"
+  }).then(function(response){
+    return response.data;
+  })
+};
+
 this.updateTheItem = function(currentItem){
     return $http({
       method: "PUT",
@@ -76,6 +85,17 @@ this.updateTheItem = function(currentItem){
       return response.data;
     });
   };
+
+  this.updateItemsRented = function(currentItem){
+    return $http({
+      method: "PUT",
+      url: "/rentals/" + currentItem._id,
+      data: currentItem
+    }).then(function(response){
+      console.log(response);
+      return response.data;
+    })
+  }
 
   this.getAllItems = function(){
     return $http({

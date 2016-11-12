@@ -1,7 +1,7 @@
 <nav-dir></nav-dir>
 
 <div id="postedContainer">
-  <form class="rentedItems" ng-repeat="rentedItem in currentUser.itemsRented">
+  <form class="rentedItems" ng-if="oneItem.rented" ng-repeat="rentedItem in currentUser.itemsRented">
       <div>
         <h4>Gear You've Rented:</h4>
         <p>
@@ -24,21 +24,8 @@
         <label>Item Location: </label>
         <input id="editItemInput" type="text" placeholder="{{rentedItem.location}}">
       </p>
-        <input type="submit" value="Rent Item"/>
-        <button type="button">Contact Renter</button>
-</div>
+        <button ng-click="updateReturns(rentedItem)">Return Item</button>
+        <button>Contact Rentee</button>
+    </div>
   </form>
 </div>
-
-
-
-
-<!--
-<input type="checkbox">
-  <button ng-hide="editItemButton" ng-click="editItemButton = true">Rented</button>
-
-  <button ng-show="editItemButton" ng-click="updateTheItem(userItem); editItemButton = false"> Save Changes</button>
-
-  <button ng-click="deleteTheItem(userItem)"><Delete Item</button>
-
-  <button ng-hide="editItemButton" ng-click="rentItem(userItem)"> Return Gear</button> -->

@@ -70,17 +70,39 @@ angular.module("gearApp")
           });
         };
 
-        $scope.updateRentals = function(item){
-          item.rented = true;
-          mainServ.updateTheItem(item)
+        $scope.updateRentals = function(currentItem){
+          items.rented = true;
+          mainServ.updateTheItem(currentItem)
           .then(function(response){
-            $scope.getAllItems();
-            $scope.currentUser.rentedItems.push(item._id);
-            mainServ.updateTheUser($scope.currentUser).then(function(resp){
+            $scope.getItems();
+            $scope.currentUser.itemsRented.push(item._id);
+            mainServ.updateTheUser($scope.currentUser).then(function(response){
+              $scope.getCurrentUser();
+            });
+          });
+        };
+
+// rentedItems
+// the above line may go before the push
+
+        $scope.updateReturns = function(currentItem){
+          item.rented = false;
+          mainServ.updateItemsRented(currentItem)
+          .then(function(response){
+            $scope.getItemsRented();
+            $scope.currentUser.itemsRented.push(item._id);
+            mainServ.updateTheUser($scope.currentUser).then(function(response){
               $scope.getCurrentUser();
             })
           })
         }
+
+        $scope.getItemsRented = function(item){
+          mainServ.getItemsRented(item)
+          .then (function(response){
+            $scope.currentItemsRented = response;
+          });
+        };
 
         $scope.deleteUser = function(currentUser) {
           mainServ.deleteUser(currentUser)
