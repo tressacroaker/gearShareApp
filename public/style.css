@@ -19,6 +19,30 @@ align-content: space-between;
 justify-content: center;
 }
 
+.hammock {
+  width: 100%;
+  height: 800px;
+}
+
+.homeSearch{
+  z-index: 100;
+  background-color: white;
+  width: 35%;
+  height: 50px;
+  color: grey;
+  text-align: center;
+  position: absolute;
+  margin-top: 15%;
+}
+
+.homePicBox{
+  display: flex;
+  justify-content:center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+}
+
 .box {
   display: flex;
   flex-wrap: wrap;
@@ -28,8 +52,7 @@ justify-content: center;
 }
 
 .box1{
-  width: 70%;
-  /*margin: 5%;*/
+  width: 73%;
 }
 
 .box2 {
@@ -53,11 +76,13 @@ justify-content: center;
   color:#484F59;
 }
 
-.box1 > h1 {
-   width: 10%;
-   border-bottom: 2px solid #40C3BD;
-   line-height: 0.1em;
-   /*margin: 10px 0 20px;*/
+/*.box1 > h2 > span{
+  color:#40C3BD;
+}*/
+
+.box1 > hr {
+   width: 30%;
+   border: 2px solid #40C3BD;
 }
 
 .box1 > h2 > .fa {
@@ -328,7 +353,9 @@ body { background: #fff;color: #222;-webkit-font-smoothing: antialiased;font-fam
 }*/
 
 header {
-		background: #40C3BD;
+		/*background: #40C3BD;*/
+    /*background: #A1A1A1;*/
+    background: white;
 		border-bottom: 3px solid #3AB0AB;
 		box-shadow: 0 1px 1px 0 #3AB0AB;
 		display:block;
@@ -423,7 +450,8 @@ textarea:focus {
 
 			header > nav > ul > li > a {
 				align-items: flex-start;
-				color: #fff;
+				/*color: #fff;*/
+        color: black;
 				display: flex;
 				font-size: 1.55rem;
 				font-weight: 200;
