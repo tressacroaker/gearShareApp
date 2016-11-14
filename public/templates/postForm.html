@@ -7,37 +7,37 @@
 <h1>Post Your Gear Here:</h1>
 <div id="postContainer">
     <form class="postForm" ng-submit="postNewItem(newItem)">
-      <div>
-        <p>
-        <label>Upload Picture:</label>
-        <input type="file" name="filename" src="url">
-        </p>
-        <p>
-        <label>Gear Name:</label>
-        <input type="text" class="itemName" ng-model="newItem.name" placeholder="Gear Name">
-        </p>
-        <p>
-        <label>Rental Price:</label>
-        <input type="text" class="itemPrice" ng-model="newItem.cost" placeholder="Rental Price">
-        </p>
-      <p>
-        <label>Gear Description:</label>
-        <input type="text" class="itemDesc" ng-model="newItem.desc" placeholder="60 characters max">
-      </p>
-      <p>
-        <label>Item Location:</label>
-        <input type="text" ng-model="newItem.location" placeholder="City, State, Zip Code">
-      </p>
-      <p>
-        <label>Keyword Tags: </label>
-        <input type="text" class="itemTags" ng-model="newItem.tags" placeholder="Keyword Tags">
-      </p>
-      <p>
-        <small>* please seperate each tag seperated with a comma
+        <div>
+            <p>
+                <label>Upload Picture:</label>
+                <input type="file" name="filename" src="url">
+            </p>
+            <p>
+                <label>Gear Name:</label>
+                <input type="text" class="itemName" ng-model="newItem.name" placeholder="Gear Name">
+            </p>
+            <p>
+                <label>Rental Price:</label>
+                <input type="text" class="itemPrice" ng-model="newItem.cost" placeholder="Rental Price">
+            </p>
+            <p>
+                <label>Gear Description:</label>
+                <input type="text" class="itemDesc" ng-model="newItem.desc" placeholder="60 characters max">
+            </p>
+            <p>
+                <label>Item Location:</label>
+                <input type="text" ng-model="newItem.location" placeholder="City, State, Zip Code">
+            </p>
+            <p>
+                <label>Keyword Tags: </label>
+                <input type="text" class="itemTags" ng-model="newItem.tags" placeholder="Keyword Tags">
+            </p>
+            <p>
+                <small>* please seperate each tag seperated with a comma
           (i.e winter, skis, bike, fishing)</small>
-      </p>
-        <input type="submit"/>
-</div>
-  </form>
+            </p>
+            <input type="submit" />
+        </div>
+    </form>
 </div>
 </div>

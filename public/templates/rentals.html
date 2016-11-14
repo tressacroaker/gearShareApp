@@ -5,7 +5,7 @@
 <br>
 <br>
 <h1>Gear You Are Renting: </h1>
-<div class="box3">
+<div class="box3" ng-init="getAllItems()">
     <div class="listingsContainer" ng-repeat="rentedItem in currentUser.itemsRented">
         <div class="listedItem">
             <div class="itemPicture">

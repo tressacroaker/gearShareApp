@@ -21,8 +21,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(express.static(__dirname + '/public'))
 
-// app.get("/user", userCtrl.getAll);
-
 app.post('/login', passport.authenticate('local-signup'), userCtrl.login);
 app.get('/logout', userCtrl.logout);
 app.get('/current', userCtrl.getMe);
