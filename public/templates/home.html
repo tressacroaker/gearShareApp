@@ -2,7 +2,7 @@
 <div class="homeContainer">
   <div class="homePicBox">
     <img class="hammock" src="hammock.png"/>
-    <input class="homeSearch" type="search" name="name" value="Search your next adventure...">
+    <div class="tagline"><h2>for the affordably active</h2></div>
   </div>
   <br>
   <div class="box1">
@@ -38,9 +38,26 @@
     </div>
     <h1></h1>
 </div>
-<div class="box2">
 
+    <h1>Current Available Listings:</h1>
+    <br>
+    <input class="homeSearch" type="search" ng-model="list" placeholder="Search by category, location...">
+
+    <div class="box3">
+      <div class="listingsContainer" ng-if="!oneItem.rented" ng-repeat="oneItem in allItems | filter: list">
+        <div class="listedItem">
+{{oneItem.name}}
+<br>
+{{oneItem.cost}}
+
+<button ng-click="updateRentals(oneItem)">+ Rent</button>
+<button>+ More Info</button>
+      </div>
+
+    </div>
 </div>
+
+
 <div id="postedContainer">
   <form class="allItems" ng-if="!oneItem.rented" ng-repeat="oneItem in allItems | filter: list">
       <div>
@@ -54,17 +71,6 @@
           <input id="editItemInput" type="text" placeholder="{{oneItem.cost}}">
           </p>
           <p>
-          <label>Gear Description: </label>
-          <input id="editItemInput" type="text" placeholder="{{oneItem.desc}}">
-          </p>
-          <p>
-          <label>Keyword Tags: </label>
-          <input id="editItemInput" type="text" placeholder="{{oneItem.tags}}">
-          </p>
-          <p>
-          <label>Item Location: </label>
-          <input id="editItemInput" type="text" placeholder="{{oneItem.location}}">
-          </p>
           <button ng-click="updateRentals(oneItem)">Rent Item</button>
           <button>Contact Renter</button>
     		</div>
