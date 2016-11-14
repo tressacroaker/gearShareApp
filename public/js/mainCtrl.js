@@ -33,7 +33,7 @@ angular.module("gearApp")
           mainServ.deleteTheItem(itemToDelete)
           .then(function(response){
             $scope.getItems();
-            // location.reload();
+            location.reload();
             // $state.go("home");
           })
         };
@@ -70,27 +70,28 @@ angular.module("gearApp")
           });
         };
 
-        // $scope.updateRentals = function(currentItem){
-        //   items.rented = true;
-        //   mainServ.updateTheItem(currentItem)
-        //   .then(function(response){
-        //     $scope.getItems();
-        //     $scope.currentUser.itemsRented.push(item._id);
-        //     mainServ.updateTheUser($scope.currentUser).then(function(response){
-        //       $scope.getCurrentUser();
-        //     });
-        //   });
-        // };
-
-// rentedItems
-// the above line may go before the push
+        $scope.updateRentals = function(currentItem){
+          currentItem.rented = true;
+          mainServ.updateTheItem(currentItem)
+          .then(function(response){
+            $scope.getItems();
+            $scope.currentUser.itemsRented.push(currentItem._id);
+            mainServ.updateTheUser($scope.currentUser).then(function(response){
+              $scope.getCurrentUser();
+            });
+          });
+        };
 
         $scope.updateReturns = function(currentItem){
-          item.rented = false;
+          currentItem.rented = false;
           mainServ.updateItemsRented(currentItem)
           .then(function(response){
             $scope.getItemsRented();
-            $scope.currentUser.itemsRented.push(item._id);
+            for (var i = 0; i < $scope.currentUser.itemsRented.length; i++) {
+              if($scope.currentUser.itemsRented[i]._id == currentItem._id){
+                $scope.currentUser.itemsRented.splice(i,1);
+              }
+            }
             mainServ.updateTheUser($scope.currentUser).then(function(response){
               $scope.getCurrentUser();
             })

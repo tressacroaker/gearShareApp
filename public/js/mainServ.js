@@ -89,7 +89,7 @@ this.updateTheItem = function(currentItem){
   this.updateItemsRented = function(currentItem){
     return $http({
       method: "PUT",
-      url: "/rentals/" + currentItem._id,
+      url: "/items/" + currentItem._id,
       data: currentItem
     }).then(function(response){
       console.log(response);

@@ -6,8 +6,7 @@
 <br>
 <h1>Your Uploaded Listings:</h1>
 <div id="postedListings" ng-init="getCurrentUser()">
-    <div class="currentListingContainer" ng-repeat="userItem in currentUser.items">
-        <div class="currentListedItem">
+        <div ng-repeat="userItem in currentUser.items" class="currentListedItem">
             <div class="currentItemPicture">
                 <img class="noImage2" src="noImage2.png">
             </div>
@@ -41,5 +40,6 @@
             <button ng-click="deleteTheItem(userItem)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
             <button ng-hide="editItemButton" ng-click="rentItem(userItem)"> Contact Rentee</button>
         </div>
-    </div>
+    <!-- </div> -->
+</div>
 </div>

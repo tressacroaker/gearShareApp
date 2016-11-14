@@ -70,6 +70,7 @@
                     <label> Zip Code: </label>
                     <input ng-hide="editUserButton" id="editItemInput" type="text" placeholder="{{currentUser.payment.zipCode}}">
                     <input ng-show="editUserButton" ng-model="currentUser.payment.zipCode" placeholder="Zip Code">
+                    <br>
                     <button ng-hide="editUserButton">Edit Card Info</button>
                     <button ng-show="editUserButton"> Save Changes</button>
                     <button>Delete Card</button>
@@ -78,4 +79,5 @@
         </div>
         <h1></h1>
     </div>
+</div>
 </div>
