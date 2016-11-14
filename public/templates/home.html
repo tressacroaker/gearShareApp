@@ -1,79 +1,68 @@
 <nav-dir></nav-dir>
 <div class="homeContainer">
-  <div class="homePicBox">
-    <img class="hammock" src="hammock.png"/>
-    <div class="tagline"><h2>for the affordably active</h2></div>
-  </div>
-  <br>
-  <div class="box1">
-    <h2>Renting the outdoor experience</h2>
-    <h3>at your price, on your time, through your neighbors, and for your chosen adventure!</h3>
-    <h2>Post your Gear  <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>  Connect with Renters <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>  See the return</h2>
-    <!-- <hr> -->
-    <br>
-    <h3>Gear Share gives members access to unlimited new hobbies at an afforadable price, saves on storage space, grows friend networks, and gives back to fellow locals who purchased the gear.</h3>
-  </div>
-  <div class="box">
-    <h1><span> How Gear Share Works </span></h1>
-  <br>
-    <div class="tripleBox">
-    <i class="fa fa-map-o fa-3x" aria-hidden="true"></i>
-    <br>
-    <h2> Browse Gear </h2>
-    <h4>  Save time and money through renting local. Renting local gives back to your neighbors and community for the high cost of exploring the outdoors. It eases the bank account at a quick, effortless, and inexpensive rate. </h4>
+    <div class="homePicBox">
+        <img class="hammock" src="hammock.png" />
+        <div class="tagline">
+            <h2>for the affordably active</h2></div>
     </div>
+    <br>
+    <div class="box1">
+        <h2>Renting the outdoor experience</h2>
+        <h3>at your price, on your time, through your neighbors, and for your chosen adventure!</h3>
+        <h2>Post your Gear  <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>  Connect with Renters <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>  See the Return</h2>
+        <br>
+        <h3>Gear Share gives members access to unlimited new hobbies at an afforadable price, saves on storage space, grows friend networks, and gives back to fellow locals who purchased the gear.</h3>
+    </div>
+    <div class="box">
+        <h1><span> How Gear Share Works </span></h1>
+        <br>
+        <div class="tripleBox">
+            <i class="fa fa-map-o fa-3x" aria-hidden="true"></i>
+            <br>
+            <h2> Browse Gear </h2>
+            <h4>  Search below for the gear that fits your specific needs. Use the search bar for categories or location, or simply keep scrolling to see all available listings. </h4>
+        </div>
 
-    <div class="tripleBox">
-    <i class="fa fa-calendar-check-o fa-3x" aria-hidden="true"></i>
-    <br>
-    <h2> Rent Gear </h2>
-    <h4>  Save time and money through renting local. Renting local gives back to your neighbors and community for the high cost of exploring the outdoors. It eases the bank account at a quick, effortless, and inexpensive rate. </h4>
-    </div>
+        <div class="tripleBox">
+            <i class="fa fa-calendar-check-o fa-3x" aria-hidden="true"></i>
+            <br>
+            <h2> Rent Gear </h2>
+            <h4>  Save time and money through renting local. Once you find the right gear, click rent and use our messaging app to converse with the Renter for pickup location. </h4>
+        </div>
 
-    <div class="tripleBox">
-    <i class="fa fa-bicycle fa-3x" aria-hidden="true"></i>
-    <br>
-    <h2> Get Active </h2>
-    <h4>  Save time and money through renting local. Renting local gives back to your neighbors and community for the high cost of exploring the outdoors. It eases the bank account at a quick, effortless, and inexpensive rate. </h4>
+        <div class="tripleBox">
+            <i class="fa fa-bicycle fa-3x" aria-hidden="true"></i>
+            <br>
+            <h2> Get Active </h2>
+            <h4>  Meet with your fellow renter, exchange gear, grab some friends, and go explore the great outdoors. These priceless memories are sure to last a lifetime! </h4>
+        </div>
+        <h1></h1>
     </div>
-    <h1></h1>
-</div>
 
     <h1>Current Available Listings:</h1>
     <br>
     <input class="homeSearch" type="search" ng-model="list" placeholder="Search by category, location...">
-
     <div class="box3">
-      <div class="listingsContainer" ng-if="!oneItem.rented" ng-repeat="oneItem in allItems | filter: list">
-        <div class="listedItem">
-{{oneItem.name}}
-<br>
-{{oneItem.cost}}
+        <div class="listingsContainer" ng-if="!oneItem.rented" ng-repeat="oneItem in allItems | filter: list">
+            <div class="listedItem">
+                <div class="itemPicture">
+                    <img class="noImage" src="noImage2.png">
+                </div>
+                <br>
+                <div class="boxItemName">
+                    <h4>{{oneItem.name}} </h4>
+                </div>
+                <br>
+                <div class="boxItemCost">
+                    <h4> ${{oneItem.cost}} / Day</h4>
+                </div>
+                <div class="boxItemDesc">
+                    <p> {{oneItem.desc}}</p>
+                </div>
+                <button ng-click="updateRentals(oneItem)">+ Rent</button>
+                <!-- <button>+ Message Renter</button> -->
+            </div>
 
-<button ng-click="updateRentals(oneItem)">+ Rent</button>
-<button>+ More Info</button>
-      </div>
-
-    </div>
-</div>
-
-
-<div id="postedContainer">
-  <form class="allItems" ng-if="!oneItem.rented" ng-repeat="oneItem in allItems | filter: list">
-      <div>
-        <h4> Current Available Listing:</h4>
-          <p>
-          <label>Gear Name: </label>
-          <input id="editItemInput" type="text" placeholder="{{oneItem.name}}">
-          </p>
-          <p>
-          <label>Rental Price: </label>
-          <input id="editItemInput" type="text" placeholder="{{oneItem.cost}}">
-          </p>
-          <p>
-          <button ng-click="updateRentals(oneItem)">Rent Item</button>
-          <button>Contact Renter</button>
-    		</div>
-      </form>
+        </div>
     </div>
 </div>

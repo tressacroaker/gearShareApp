@@ -1,31 +1,29 @@
 <nav-dir></nav-dir>
-
-<div id="postedContainer">
-  <form class="rentedItems" ng-if="oneItem.rented" ng-repeat="rentedItem in currentUser.itemsRented">
-      <div>
-        <h4>Gear You've Rented:</h4>
-        <p>
-        <label>Gear Name: </label>
-        <input id="editItemInput" type="text" placeholder="{{rentedItem.name}}">
-        </p>
-        <p>
-        <label>Rental Price: </label>
-        <input id="editItemInput" type="text" placeholder="{{rentedItem.cost}}">
-      </p>
-      <p>
-        <label>Gear Description: </label>
-        <input id="editItemInput" type="text" placeholder="{{rentedItem.desc}}">
-      </p>
-      <p>
-        <label>Keyword Tags: </label>
-        <input id="editItemInput" type="text" placeholder="{{rentedItem.tags}}">
-      </p>
-      <p>
-        <label>Item Location: </label>
-        <input id="editItemInput" type="text" placeholder="{{rentedItem.location}}">
-      </p>
-        <button ng-click="updateReturns(rentedItem)">Return Item</button>
-        <button>Contact Rentee</button>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Gear You Are Renting: </h1>
+<div class="box3">
+    <div class="listingsContainer" ng-if="oneItem.rented" ng-repeat="rentedItem in currentUser.itemsRented">
+        <div class="listedItem">
+            <div class="itemPicture">
+                <img class="noImage" src="noImage2.png">
+            </div>
+            <br>
+            <div class="boxItemName">
+                <h4>{{rentedItem.name}} </h4>
+            </div>
+            <br>
+            <div class="boxItemCost">
+                <h4> ${{rentedItem.cost}} / Day</h4>
+            </div>
+            <div class="boxItemDesc">
+                <p> {{rentedItem.desc}}</p>
+            </div>
+            <button ng-click="updateReturns(rentedItem)">+ Return</button>
+            <button>+ More Info</button>
+        </div>
     </div>
-  </form>
 </div>

@@ -1,46 +1,45 @@
 <nav-dir></nav-dir>
-<div id="postedContainer" ng-init="getCurrentUser()">
-    <form class="postForm" ng-repeat="userItem in currentUser.items">
-      <div>
-        <h4> Your Posted Item:</h4>
-        <p>
-        <label>Gear Name: </label>
-        <input ng-hide="editItemButton" id="editItemInput" type="text" placeholder="{{userItem.name}}">
-
-       <input ng-show="editItemButton" ng-model="userItem.name" placeholder="{{userItem.name}}">
-        </p>
-        <p>
-        <label>Rental Price: </label>
-        <input ng-hide="editItemButton" id="editItemInput" type="text" placeholder="{{userItem.cost}}">
-
-				<input ng-show="editItemButton" ng-model="userItem.cost" placeholder="{{userItem.cost}}">
-      </p>
-      <p>
-        <label>Gear Description: </label>
-        <input ng-hide="editItemButton" id="editItemInput" type="text" placeholder="{{userItem.desc}}">
-
-				<input ng-show="editItemButton" ng-model="userItem.desc" placeholder="{{userItem.desc}}">
-      </p>
-      <p>
-        <label>Keyword Tags: </label>
-        <input ng-hide="editItemButton" id="editItemInput" type="text" placeholder="{{userItem.tags}}">
-
-				<input ng-show="editItemButton" ng-model="userItem.tags" placeholder="{{userItem.tags}}">
-      </p>
-      <p>
-        <label>Item Location: </label>
-        <input ng-hide="editItemButton" id="editItemInput" type="text" placeholder="{{userItem.location}}">
-
-        <input ng-show="editItemButton" ng-model="userItem.tags" placeholder="{{userItem.location}}">
-      </p>
-
-				<button ng-hide="editItemButton" ng-click="editItemButton = true"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-
- 				<button ng-show="editItemButton" ng-click="updateTheItem(userItem); editItemButton = false"> Save Changes</button>
-
-  			<button ng-click="deleteTheItem(userItem)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-
-        <button ng-hide="editItemButton" ng-click="rentItem(userItem)"> Contact Rentee</button>
-		</div>
-  </form>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Your Uploaded Listings:</h1>
+<div id="postedListings" ng-init="getCurrentUser()">
+    <div class="currentListingContainer" ng-repeat="userItem in currentUser.items">
+        <div class="currentListedItem">
+            <div class="currentItemPicture">
+                <img class="noImage2" src="noImage2.png">
+            </div>
+            <div class="boxItem">
+                <h4>Gear Name: </h4>
+                <input ng-hide="editItemButton" id="editItemInput" type="text" placeholder="{{userItem.name}}">
+                <input ng-show="editItemButton" ng-model="userItem.name" placeholder="{{userItem.name}}">
+            </div>
+            <div class="boxItem">
+                <h4>Rental Price/ Day: </h4>
+                <input ng-hide="editItemButton" id="editItemInput" type="text" placeholder="{{userItem.cost}}">
+                <input ng-show="editItemButton" ng-model="userItem.cost" placeholder="{{userItem.cost}}">
+            </div>
+            <div class="boxItem">
+                <h4>Gear Description: </h4>
+                <input ng-hide="editItemButton" id="editItemInput" type="text" placeholder="{{userItem.desc}}">
+                <input ng-show="editItemButton" ng-model="userItem.desc" placeholder="{{userItem.desc}}">
+            </div>
+            <div class="boxItem">
+                <h4>Keyword Tags: </h4>
+                <input ng-hide="editItemButton" id="editItemInput" type="text" placeholder="{{userItem.tags}}">
+                <input ng-show="editItemButton" ng-model="userItem.tags" placeholder="{{userItem.tags}}">
+            </div>
+            <div class="boxItem">
+                <h4>Item Location: </h4>
+                <input ng-hide="editItemButton" id="editItemInput" type="text" placeholder="{{userItem.location}}">
+                <input ng-show="editItemButton" ng-model="userItem.tags" placeholder="{{userItem.location}}">
+            </div>
+            <button ng-hide="editItemButton" ng-click="editItemButton = true"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+            <button ng-show="editItemButton" ng-click="updateTheItem(userItem); editItemButton = false"> Save Changes</button>
+            <button ng-click="deleteTheItem(userItem)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+            <button ng-hide="editItemButton" ng-click="rentItem(userItem)"> Contact Rentee</button>
+        </div>
+    </div>
 </div>

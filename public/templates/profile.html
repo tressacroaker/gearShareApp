@@ -1,83 +1,81 @@
 <nav-dir></nav-dir>
-<div id="splitContainer">
-  <div id="left">
-<div id="postedContainer">
-  <form class="postForm">
-    <div>
-      <h2><i class="fa fa-user" aria-hidden="true"></i> Profile Info</h2>
-      <br>
-      <h4>Welcome, </h4>
-      <br>
-      <h4>{{currentUser.firstName}} {{currentUser.lastName}}</h4>
-    <img ng-src="{{curentUser.picture}}"/>
-    <br>
-    <label> Change Profile Pic:</label>
-    <input ng-show="editUserButton" type="file" ng-model="currentUser.picture"/>
-    <br>
-    <input ng-show="editUserButton" ng-model="currentUser.picture" placeholder="Upload New Image">
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Welcome to your profile {{currentUser.firstName}}!</h1>
+<div class="profileContainer">
+    <div class="boxProfile">
+        <div class="tripleBox2">
+            <img src="noPerson.png">
+            <br>
+            <h4>  {{currentUser.about}} </h4>
+            <input ng-show="editUserButton" ng-model="currentUser.about" placeholder="Short Bio">
+        </div>
 
-      <br>
-      <label> First Name:</label>
-      <input ng-hide="editUserButton" id="editItemInput" type="text" placeholder="{{currentUser.firstName}}">
+        <div class="tripleBox2">
+            <form class="postForm">
+                <div>
 
-    <input ng-show="editUserButton" ng-model="currentUser.firstName" placeholder="First Name">
-      <br>
-      <label> Last Name: </label>
-      <input ng-hide="editUserButton" id="editItemInput" type="text" placeholder="{{currentUser.lastName}}">
+                    <label> First Name:</label>
+                    <input ng-hide="editUserButton" id="editItemInput" type="text" placeholder="{{currentUser.firstName}}">
 
-      <input ng-show="editUserButton" ng-model="currentUser.lastName" placeholder="Last Name">
-      <br>
-      <label> Email:</label>
-      <input ng-hide="editUserButton" id="editItemInput" type="text" placeholder="{{currentUser.email}}">
+                    <input ng-show="editUserButton" ng-model="currentUser.firstName" placeholder="First Name">
+                    <br>
+                    <label> Last Name: </label>
+                    <input ng-hide="editUserButton" id="editItemInput" type="text" placeholder="{{currentUser.lastName}}">
 
-      <input ng-show="editUserButton" ng-model="currentUser.email" placeholder="Email">
-      <br>
-      <label ng-show="editUserButton"> New Password:</label>
-      <input ng-show="editUserButton" ng-model="currentUser.newPassword" placeholder="Change Here">
-      <br>
+                    <input ng-show="editUserButton" ng-model="currentUser.lastName" placeholder="Last Name">
+                    <br>
+                    <label> Email:</label>
+                    <input ng-hide="editUserButton" id="editItemInput" type="text" placeholder="{{currentUser.email}}">
 
-      <button ng-hide="editUserButton" ng-click="editUserButton = true">Edit Your Info</button>
-      <button ng-show="editUserButton" ng-click="updateTheUser(currentUser); editUserButton = false"> Save Changes</button>
-      <button ng-click="deleteUser(currentUser)">Delete Account</button>
-    </div>
-  </form>
-</div>
-</div>
-<div id="right">
-  <div id="postedContainer">
-    <form class="postForm">
-    <div>
-      <h2><i class="fa fa-credit-card" aria-hidden="true"></i> Payment Info </h2>
-      <br>
-      <label><i class="fa fa-cc-discover" aria-hidden="true"></i> <i class="fa fa-cc-mastercard" aria-hidden="true"></i> <i class="fa fa-cc-visa" aria-hidden="true"></i></label>
-      <br>
-        <br>
-      <label> Name On Card: </label>
-      <input ng-hide="editUserButton" id="editItemInput" type="text" placeholder="{{currentUser.payment.nameOnCard}}">
-      <input ng-show="editUserButton" ng-model="currentUser.payment.nameOnCard" placeholder="Name as it appears on card">
-      <br>
+                    <input ng-show="editUserButton" ng-model="currentUser.email" placeholder="Email">
+                    <br>
+                    <label ng-show="editUserButton"> New Password:</label>
+                    <input ng-show="editUserButton" ng-model="currentUser.newPassword" placeholder="Change Here">
+                    <button ng-hide="editUserButton" ng-click="editUserButton = true">Edit</button>
+                    <button ng-show="editUserButton" ng-click="updateTheUser(currentUser); editUserButton = false"> Save Changes</button>
+                    <button ng-click="deleteUser(currentUser)">Delete Account</button>
+                </div>
+            </form>
+        </div>
 
-      <label> Card Number: </label>
-      <input ng-hide="editUserButton" id="editItemInput" type="password" placeholder="{{currentUser.payment.cardNumber}}">
-      <input type="password" ng-show="editUserButton" ng-model="currentUser.payment.cardNumber" placeholder="Card Number">
-      <br>
-      <label> Security Code: </label>
-      <input ng-hide="editUserButton" id="editItemInput" type="text" placeholder="{{currentUser.payment.securityCode}}">
-      <input ng-show="editUserButton" ng-model="currentUser.payment.securityCode" placeholder="Security Code">
-      <br>
-      <label> Expiration Date: </label>
-      <input ng-hide="editUserButton" id="editItemInput" type="text" placeholder="{{currentUser.payment.expirationDate}}">
-      <input ng-show="editUserButton" ng-model="currentUser.payment.expirationDate" placeholder="MM-YYYY">
-      <br>
-      <label> Zip Code: </label>
-      <input ng-hide="editUserButton" id="editItemInput" type="text" placeholder="{{currentUser.payment.zipCode}}">
-      <input ng-show="editUserButton" ng-model="currentUser.payment.zipCode" placeholder="Zip Code">
-      <br>
-      <button ng-hide="editUserButton">Edit Card Info</button>
-      <button ng-show="editUserButton"> Save Changes</button>
-      <button>Delete Card</button>
-          </div>
-        </form>
-      </div>
+        <div class="tripleBox2">
+            <form class="postForm">
+                <div>
+                    <h2><i class="fa fa-credit-card" aria-hidden="true"></i> Payment Info </h2>
+                    <br>
+                    <label><i class="fa fa-cc-discover" aria-hidden="true"></i> <i class="fa fa-cc-mastercard" aria-hidden="true"></i> <i class="fa fa-cc-visa" aria-hidden="true"></i></label>
+                    <br>
+                    <br>
+                    <label> Name On Card: </label>
+                    <input ng-hide="editUserButton" id="editItemInput" type="text" placeholder="{{currentUser.payment.nameOnCard}}">
+                    <input ng-show="editUserButton" ng-model="currentUser.payment.nameOnCard" placeholder="Name as it appears on card">
+                    <br>
+
+                    <label> Card Number: </label>
+                    <input ng-hide="editUserButton" id="editItemInput" type="password" placeholder="{{currentUser.payment.cardNumber}}">
+                    <input type="password" ng-show="editUserButton" ng-model="currentUser.payment.cardNumber" placeholder="Card Number">
+                    <br>
+                    <label> Security Code: </label>
+                    <input ng-hide="editUserButton" id="editItemInput" type="text" placeholder="{{currentUser.payment.securityCode}}">
+                    <input ng-show="editUserButton" ng-model="currentUser.payment.securityCode" placeholder="Security Code">
+                    <br>
+                    <label> Expiration Date: </label>
+                    <input ng-hide="editUserButton" id="editItemInput" type="text" placeholder="{{currentUser.payment.expirationDate}}">
+                    <input ng-show="editUserButton" ng-model="currentUser.payment.expirationDate" placeholder="MM-YYYY">
+                    <br>
+                    <label> Zip Code: </label>
+                    <input ng-hide="editUserButton" id="editItemInput" type="text" placeholder="{{currentUser.payment.zipCode}}">
+                    <input ng-show="editUserButton" ng-model="currentUser.payment.zipCode" placeholder="Zip Code">
+                    <button ng-hide="editUserButton">Edit Card Info</button>
+                    <button ng-show="editUserButton"> Save Changes</button>
+                    <button>Delete Card</button>
+                </div>
+            </form>
+        </div>
+        <h1></h1>
     </div>
 </div>

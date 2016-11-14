@@ -1,12 +1,18 @@
 body {
   margin: 0;
-  /*background-color: #FFBD2B;*/
-  /*opacity: 0.9px;*/
 }
 
 footer {
-  display: flex;
-  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid #40C3BD;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.andyLink{
+  text-decoration: none;
+  color: grey;
 }
 
 /*below is for home page layout*/
@@ -34,7 +40,6 @@ justify-content: center;
 }
 
 .homeSearch{
-  /*z-index: 100;*/
   background-color: white;
   width: 30%;
   height: 40px;
@@ -75,25 +80,15 @@ justify-content: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /*flex-direction: row;*/
   width: 80%;
-  /*height: 350px;*/
-  /*margin-top: : 7%;*/
-  /*background-color: #F4F4F4;*/
+  margin-top: 15px;
 }
 
 .listingsContainer{
   display: flex;
   flex-wrap: wrap;
-  /*flex-direction: column;*/
-  /*width: 60%;*/
   margin: auto;
-  margin-top: 7%;
-  margin-bottom: 7%;
-  /*align-items: center;*/
   align-content: space-between;
-  /*justify-content: center;*/
-  /*text-align: center;*/
 }
 
 .listedItem{
@@ -101,10 +96,10 @@ justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
   width: 300px;
-  height: 300px;
+  height: 450px;
   margin: auto;
   margin-top: 7%;
-  margin-bottom: 7%;
+  /*margin-bottom: 7%;*/
   align-items: center;
   align-content: space-between;
   justify-content: center;
@@ -115,14 +110,34 @@ justify-content: center;
   font-family: georgia, "trebuchet ms", arial, serif;
 }
 
+.boxItemName{
+  width: 100%;
+}
+
+.boxItemCost{
+  width: 100%;
+}
+
+.boxItemDesc{
+  width: 100%;
+}
+.boxItemDesc > p{
+  font-size: 15px;
+  color: #A1A1A1;
+}
+
+.noImage{
+  width: 98%;
+  height: 180px;
+}
+
 .listedItem > button{
-padding: 7px;
-background-color: white;
-/*border-right: 2px solid #FFBB4D;*/
-color: #FFBB4D;
-/*position:absolute;*/
-bottom: 5px;
-margin: 5px;
+  padding: 7px;
+  background-color: white;
+  /*border-right: 2px solid #FFBB4D;*/
+  /*color: #FFBB4D;*/
+  color:#40C3BD;
+
 }
 
 .box1{
@@ -189,22 +204,111 @@ h1 span {
     color: #FFBB4D;
 }
 
-
-.cabinPic {
-  display: flex;;
-  width: 96%;
-  margin: auto;
-  padding-top: 2%;
-}
-
 /*above is for home page layout*/
 
 #editItemInput {
   border: none;
 }
 
+/*below is for current listings page*/
+
+h1{
+  color: #FFBB4D;
+  text-align: center;
+}
+.postedListings {
+  display: flex;
+  flex-wrap: wrap;
+  /*width: 50%;*/
+}
+
+.currentListingContainer{
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  align-content: space-between;
+  /*width: 45%;*/
+}
+
+.currentListedItem{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 450px;
+  height: 480px;
+  margin: auto;
+  /*margin-top: 7%;*/
+  margin-bottom: 2%;
+  align-items: center;
+  align-content: space-around;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #A1A1A1;
+  padding: 1em;
+  font-size: 1.4em;
+  font-family: georgia, "trebuchet ms", arial, serif;
+}
+
+.boxItem{
+  width: 100%;
+  /*text-align: left;*/
+  /*margin: 0;*/
+  /*float: left;*/
+}
+
+.boxItem > h4{
+  text-align: left;
+}
+
+.noImage2{
+  width: 98%;
+  height: 180px;
+}
+
+.boxItem > input{
+  font-size: 20px;
+  border: 0.5px solid lightgrey;
+  /*position: absolute;*/
+}
+
+
+/*above is for current listings page*/
+
 /*below is for profile layout*/
 
+.profileContainer{
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+align-items: center;
+align-content: space-between;
+justify-content: center;
+/*margin-top: 0;*/
+}
+
+.boxProfile {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 90%;
+  /*margin-top: 5%;*/
+}
+
+.tripleBox2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 30%;
+  margin: auto;
+  margin-top: 7%;
+  /*margin-bottom: 7%;*/
+  align-items: center;
+  /*align-content: space-between;*/
+  justify-content: center;
+  text-align: center;
+}
+
+/*
 #splitContainer {
   display: flex;
   flex-flow: row;
@@ -217,7 +321,7 @@ h1 span {
 
 #right {
   display: block;
-}
+}*/
 
 /*above if for profile layout*/
 /*below is the login front page styles*/
@@ -284,10 +388,11 @@ margin-bottom: 50px;
 }
 
 #postContainer {
-  /*display: flex;
-  flex-direction: row;*/
+  display: flex;
+  flex-direction: row;
 	max-width: 600px;
 	margin: auto;
+  /*margin-top: 50px;*/
 	padding: 1em;
 	/*background:rgba(0,0,0,.1);*/
 	color: #333;

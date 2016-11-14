@@ -70,17 +70,17 @@ angular.module("gearApp")
           });
         };
 
-        $scope.updateRentals = function(currentItem){
-          items.rented = true;
-          mainServ.updateTheItem(currentItem)
-          .then(function(response){
-            $scope.getItems();
-            $scope.currentUser.itemsRented.push(item._id);
-            mainServ.updateTheUser($scope.currentUser).then(function(response){
-              $scope.getCurrentUser();
-            });
-          });
-        };
+        // $scope.updateRentals = function(currentItem){
+        //   items.rented = true;
+        //   mainServ.updateTheItem(currentItem)
+        //   .then(function(response){
+        //     $scope.getItems();
+        //     $scope.currentUser.itemsRented.push(item._id);
+        //     mainServ.updateTheUser($scope.currentUser).then(function(response){
+        //       $scope.getCurrentUser();
+        //     });
+        //   });
+        // };
 
 // rentedItems
 // the above line may go before the push

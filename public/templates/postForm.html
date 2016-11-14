@@ -1,11 +1,16 @@
 <nav-dir></nav-dir>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Post Your Gear Here:</h1>
 <div id="postContainer">
     <form class="postForm" ng-submit="postNewItem(newItem)">
       <div>
-        <h4> Post Your Gear Below:</h4>
         <p>
         <label>Upload Picture:</label>
-        <input type="file" name="filename" accept="image/gif, image/jpeg, image/png" src="url">
+        <input type="file" name="filename" src="url">
         </p>
         <p>
         <label>Gear Name:</label>
@@ -17,7 +22,7 @@
         </p>
       <p>
         <label>Gear Description:</label>
-        <input type="text" class="itemDesc" ng-model="newItem.desc" placeholder="Gear Description">
+        <input type="text" class="itemDesc" ng-model="newItem.desc" placeholder="60 characters max">
       </p>
       <p>
         <label>Item Location:</label>
