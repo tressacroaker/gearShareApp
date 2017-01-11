@@ -8,7 +8,7 @@
 <div id="postedListings" ng-init="getCurrentUser()">
     <div ng-repeat="userItem in currentUser.items" class="currentListedItem">
         <div class="currentItemPicture">
-            <img class="noImage2" src="noImage2.png">
+            <img class="noImage2" src="{{userItem.img}}">
         </div>
         <div class="boxItem">
             <h4>Gear Name: </h4>
@@ -22,18 +22,21 @@
         </div>
         <div class="boxItem">
             <h4>Gear Description: </h4>
+            <!-- <textarea rows="3" cols="20" ng-hide="editItemButton" id="editItemInput" type="text" placeholder="{{userItem.desc}}"> -->
             <input ng-hide="editItemButton" id="editItemInput" type="text" placeholder="{{userItem.desc}}">
-            <input ng-show="editItemButton" ng-model="userItem.desc" placeholder="{{userItem.desc}}">
+            <textarea rows="3" cols="20" ng-show="editItemButton" ng-model="userItem.desc" placeholder="{{userItem.desc}}">
+            </textarea>
+            <!-- <input ng-show="editItemButton" ng-model="userItem.desc" placeholder="{{userItem.desc}}"> -->
         </div>
-        <div class="boxItem">
+        <!-- <div class="boxItem">
             <h4>Keyword Tags: </h4>
             <input ng-hide="editItemButton" id="editItemInput" type="text" placeholder="{{userItem.tags}}">
             <input ng-show="editItemButton" ng-model="userItem.tags" placeholder="{{userItem.tags}}">
-        </div>
+        </div> -->
         <div class="boxItem">
             <h4>Item Location: </h4>
             <input ng-hide="editItemButton" id="editItemInput" type="text" placeholder="{{userItem.location}}">
-            <input ng-show="editItemButton" ng-model="userItem.tags" placeholder="{{userItem.location}}">
+            <input ng-show="editItemButton" ng-model="userItem.location" placeholder="{{userItem.location}}">
         </div>
         <button ng-hide="editItemButton" ng-click="editItemButton = true"><i class="fa fa-pencil" aria-hidden="true"></i></button>
         <button ng-show="editItemButton" ng-click="updateTheItem(userItem); editItemButton = false"> Save Changes</button>

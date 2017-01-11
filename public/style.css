@@ -12,7 +12,7 @@ footer {
 
 .andyLink{
   text-decoration: none;
-  color: grey;
+  color: grey`;
 }
 
 /*below is for home page layout*/
@@ -75,14 +75,6 @@ justify-content: center;
 .goback {
   text-align: center;
   margin-top: 200px;
-}
-
-.box {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 80%;
-  margin-top: 5%;
 }
 
 .homeContainer > h1{
@@ -177,6 +169,14 @@ justify-content: center;
 
 .box1 > h2 > .fa {
   color:#FFBB4D;
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 80%;
+  margin-top: 5%;
 }
 
 .tripleBox {

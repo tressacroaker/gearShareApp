@@ -75,8 +75,6 @@ angular.module("gearApp")
             mainServ.updateTheItem(currentItem)
                 .then(function(response) {
                     $scope.getItems();
-                    location.reload();
-
                     $scope.currentUser.itemsRented.push(currentItem._id);
                     mainServ.updateTheUser($scope.currentUser).then(function(response) {
                         $scope.getCurrentUser();

@@ -8,11 +8,18 @@
 <div class="profileContainer">
     <div class="boxProfile">
         <div class="tripleBox2">
-            <img src="noPerson.png">
+          <form class="postForm">
+              <div>
+                <input ng-show="editUserButton" type="text" ng-model="currentUser.picture">
+                <img ng-hide="editUserButton" src="{{currentUser.picture}}">
             <br>
             <h4>  {{currentUser.about}} </h4>
             <input ng-show="editUserButton" ng-model="currentUser.about" placeholder="Short Bio">
+            <button ng-hide="editUserButton" ng-click="editUserButton = true">Edit</button>
+            <button ng-show="editUserButton" ng-click="updateTheUser(currentUser); editUserButton = false"> Save Changes</button>
         </div>
+      </form>
+    </div>
 
         <div class="tripleBox2">
             <form class="postForm">

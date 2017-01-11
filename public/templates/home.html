@@ -50,7 +50,7 @@
         <div class="listingsContainer" ng-if="!oneItem.rented" ng-repeat="oneItem in allItems | filter: list">
             <div class="listedItem">
                 <div class="itemPicture">
-                    <img class="noImage" src="noImage2.png">
+                    <img class="noImage" src="{{oneItem.img}}">
                 </div>
                 <br>
                 <div class="boxItemName">

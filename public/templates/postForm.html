@@ -10,7 +10,7 @@
         <div>
             <p>
                 <label>Upload Picture:</label>
-                <input type="file" name="filename" src="url">
+                <input type="text" ng-model="newItem.img">
             </p>
             <p>
                 <label>Gear Name:</label>
@@ -22,20 +22,22 @@
             </p>
             <p>
                 <label>Gear Description:</label>
-                <input type="text" class="itemDesc" ng-model="newItem.desc" placeholder="60 characters max">
+                <textarea rows="4" cols="50" class="itemDesc" ng-model="newItem.desc">
+                <!-- <input type="text" class="itemDesc" ng-model="newItem.desc" placeholder="60 characters max"> -->
+              </textarea>
             </p>
             <p>
                 <label>Item Location:</label>
                 <input type="text" ng-model="newItem.location" placeholder="City, State, Zip Code">
             </p>
-            <p>
+            <!-- <p>
                 <label>Keyword Tags: </label>
                 <input type="text" class="itemTags" ng-model="newItem.tags" placeholder="Keyword Tags">
             </p>
             <p>
                 <small>* please seperate each tag seperated with a comma
           (i.e winter, skis, bike, fishing)</small>
-            </p>
+            </p> -->
             <input type="submit" />
         </div>
     </form>
