@@ -34,6 +34,7 @@ app.put('/items/:id', itemsCtrl.update);
 app.delete('/items/:id', itemsCtrl.delete);
 
 mongoose.connect('mongodb://localhost: 27017/gearDB');
+mongoose.connect(process.env.MONGO_LABS_URI)
 mongoose.connection.once('open', function(){
   console.log('connected to mongoDB');
 });
