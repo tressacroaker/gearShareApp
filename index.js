@@ -1,4 +1,4 @@
-const cors = require('cors');
+// const cors = require('cors');
 const bodyParser = require('body-parser');
 const express = require('express');
 const session = require('express-session');
@@ -17,7 +17,7 @@ require('./config/passport.js')(passport);
 app.use(session(config));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(cors());
+// app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(express.static(__dirname + '/public'))
