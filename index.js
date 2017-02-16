@@ -10,6 +10,7 @@ var itemsCtrl = require('./controllers/itemsCtrl.js');
 var userCtrl = require("./controllers/userCtrl.js");
 
 var app = express();
+mongodb://<admin>:<monkey>@ds143717.mlab.com:43717/gearshare
 
 require('./config/passport.js')(passport);
 
@@ -37,6 +38,7 @@ mongoose.connection.once('open', function(){
   console.log('connected to mongoDB');
 });
 
-app.listen(5000, function(){
+// app.listen(5000, function(){
+app.listen(process.env.PORT || 5000, function(){
   console.log("listening on 5000");
 });
