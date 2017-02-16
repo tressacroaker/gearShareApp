@@ -10,7 +10,8 @@ var itemsCtrl = require('./controllers/itemsCtrl.js');
 var userCtrl = require("./controllers/userCtrl.js");
 
 var app = express();
-mongodb://<admin>:<monkey>@ds143717.mlab.com:43717/gearshare
+mongoose.connect(process.env.mongodb://<admin>:<monkey>@ds143717.mlab.com:43717/gearshare
+)
 
 require('./config/passport.js')(passport);
 
@@ -34,7 +35,6 @@ app.put('/items/:id', itemsCtrl.update);
 app.delete('/items/:id', itemsCtrl.delete);
 
 mongoose.connect('mongodb://localhost: 27017/gearDB');
-mongoose.connect(process.env.MONGO_LABS_URI)
 mongoose.connection.once('open', function(){
   console.log('connected to mongoDB');
 });
